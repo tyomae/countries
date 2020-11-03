@@ -18,11 +18,9 @@ final class CountryViewModelImpl: CountryViewModel {
 	let regionName: String
 	let emojiFlag: String
 	
-	init(countryName: String, regionName: String, emojiFlag: String) {
+	init(countryName: String, regionName: String, countryCode: String) {
 		self.countryName = countryName
 		self.regionName = regionName
-		self.emojiFlag = emojiFlag
+		self.emojiFlag = TextUtilities.emojiFlag(from: countryCode)
 	}
 }
-
-

@@ -52,7 +52,9 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
 		
 		let country = countries[indexPath.row]
-		let countryCell = CountryViewModelImpl(countryName: country.name, regionName: country.region, emojiFlag: "🇷🇺")
+		let countryCell = CountryViewModelImpl(countryName: country.name,
+											   regionName: country.region,
+											   countryCode: country.countryCode)
 		cell.configure(with: countryCell)
 		return cell
 	}

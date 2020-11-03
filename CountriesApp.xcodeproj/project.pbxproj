@@ -27,6 +27,7 @@
 		EE468D8F2551977A007A7941 /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D8E2551977A007A7941 /* BaseNetworkService.swift */; };
 		EE468D92255197A2007A7941 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D91255197A2007A7941 /* CountryService.swift */; };
 		EE468D952551A102007A7941 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D942551A102007A7941 /* Location.swift */; };
+		EE468D992551B725007A7941 /* TextUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D982551B725007A7941 /* TextUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		EE468D8E2551977A007A7941 /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		EE468D91255197A2007A7941 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		EE468D942551A102007A7941 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		EE468D982551B725007A7941 /* TextUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				EE468CFD25503069007A7941 /* ViewModel.swift */,
 				EE468D00255030D9007A7941 /* KeyboardNotification.swift */,
 				EE468D242550665E007A7941 /* ConfigurableView.swift */,
+				EE468D982551B725007A7941 /* TextUtilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				EE468CD925501AB0007A7941 /* CountriesListViewController.swift in Sources */,
 				EE468D92255197A2007A7941 /* CountryService.swift in Sources */,
 				EE468D952551A102007A7941 /* Location.swift in Sources */,
+				EE468D992551B725007A7941 /* TextUtilities.swift in Sources */,
 				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,
 				EE468D8825519701007A7941 /* Country.swift in Sources */,
 				EE468CD525501AB0007A7941 /* AppDelegate.swift in Sources */,

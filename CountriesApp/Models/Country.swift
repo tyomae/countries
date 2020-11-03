@@ -14,6 +14,7 @@ struct Country: Decodable {
 	var subregion: String
 	var population: Int
 	var location: Location?
+	var countryCode: String
 	
 	enum CodingKeys: String, CodingKey {
 		case name = "name"
@@ -22,6 +23,7 @@ struct Country: Decodable {
 		case subregion = "subregion"
 		case population = "population"
 		case location = "latlng"
+		case countryCode = "alpha2Code"
 	}
 	
 	init(from decoder: Decoder) throws {
@@ -35,6 +37,7 @@ struct Country: Decodable {
 		if latlon.count > 1 {
 			self.location = Location(lat: latlon[0], lon: latlon[1])
 		}
+		self.countryCode = try values.decode(String.self, forKey: .countryCode)
 	}	
 }
 
