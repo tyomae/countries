@@ -8,6 +8,7 @@
 import UIKit
 
 class CountryTableViewCell: UITableViewCell, ConfigurableView {
+	
 	@IBOutlet weak var ovalView: UIView! {
 		didSet {
 			ovalView.layer.cornerRadius = 26
