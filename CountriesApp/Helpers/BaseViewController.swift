@@ -7,8 +7,7 @@
 
 import UIKit
 
-class BaseViewController<T, V: ViewModel>: UIViewController, RootViewType where T: UIView {
-	typealias RootViewType = T
+class BaseViewController<V: ViewModel>: UIViewController {
 	typealias ViewModelType = V
 	
 	var viewModel: ViewModelType!
@@ -24,9 +23,6 @@ class BaseViewController<T, V: ViewModel>: UIViewController, RootViewType where 
 	private let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
 	private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
 
-	override func loadView() {
-		self.view = T()
-	}
 
 	override func viewDidLoad() {
 		self.setupViewModel()
@@ -88,14 +84,14 @@ class BaseViewController<T, V: ViewModel>: UIViewController, RootViewType where 
 
 	@objc
 	private func hideKeyboard() {
-		self.rootView.endEditing(true)
+		self.view.endEditing(true)
 	}
 
 	private func setupResignTap() {
 		let resignTap = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
 		resignTap.numberOfTapsRequired = 1
 		resignTap.cancelsTouchesInView = false
-		self.rootView.addGestureRecognizer(resignTap)
+		self.view.addGestureRecognizer(resignTap)
 	}
 
 	// MARK: - Keyboard observers

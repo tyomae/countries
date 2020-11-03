@@ -13,18 +13,14 @@
 		EE468CDC25501AB0007A7941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE468CDA25501AB0007A7941 /* Main.storyboard */; };
 		EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE468CDD25501AB3007A7941 /* Assets.xcassets */; };
 		EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE468CDF25501AB3007A7941 /* LaunchScreen.storyboard */; };
-		EE468CEE25502B80007A7941 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CED25502B80007A7941 /* BaseTableViewController.swift */; };
-		EE468CF225502BA7007A7941 /* BaseRootTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CF125502BA7007A7941 /* BaseRootTableView.swift */; };
-		EE468CF725502E93007A7941 /* RootViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CF625502E93007A7941 /* RootViewType.swift */; };
 		EE468CFB25502ED0007A7941 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CFA25502ED0007A7941 /* BaseViewController.swift */; };
 		EE468CFE25503069007A7941 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CFD25503069007A7941 /* ViewModel.swift */; };
 		EE468D01255030D9007A7941 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D00255030D9007A7941 /* KeyboardNotification.swift */; };
-		EE468D0425503140007A7941 /* TableViewSectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D0325503140007A7941 /* TableViewSectionsViewModel.swift */; };
-		EE468D0B2550318B007A7941 /* TableCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D0A2550318B007A7941 /* TableCellType.swift */; };
 		EE468D0E25503232007A7941 /* BaseConfigurableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D0D25503232007A7941 /* BaseConfigurableTableViewCell.swift */; };
-		EE468D1125503253007A7941 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D1025503253007A7941 /* TableCellConfigurable.swift */; };
-		EE468D1525503998007A7941 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D1425503998007A7941 /* UITableView+Register.swift */; };
-		EE468D1925503B3E007A7941 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D1825503B3E007A7941 /* Reusable.swift */; };
+		EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D242550665E007A7941 /* ConfigurableView.swift */; };
+		EE468D292550682A007A7941 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D282550682A007A7941 /* CountriesListViewModel.swift */; };
+		EE468D3125508424007A7941 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D2F25508424007A7941 /* CountryTableViewCell.swift */; };
+		EE468D3225508424007A7941 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE468D3025508424007A7941 /* CountryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,18 +32,14 @@
 		EE468CDD25501AB3007A7941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE468CE025501AB3007A7941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE468CE225501AB3007A7941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE468CED25502B80007A7941 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
-		EE468CF125502BA7007A7941 /* BaseRootTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRootTableView.swift; sourceTree = "<group>"; };
-		EE468CF625502E93007A7941 /* RootViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewType.swift; sourceTree = "<group>"; };
 		EE468CFA25502ED0007A7941 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EE468CFD25503069007A7941 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EE468D00255030D9007A7941 /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
-		EE468D0325503140007A7941 /* TableViewSectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSectionsViewModel.swift; sourceTree = "<group>"; };
-		EE468D0A2550318B007A7941 /* TableCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellType.swift; sourceTree = "<group>"; };
 		EE468D0D25503232007A7941 /* BaseConfigurableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConfigurableTableViewCell.swift; sourceTree = "<group>"; };
-		EE468D1025503253007A7941 /* TableCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurable.swift; sourceTree = "<group>"; };
-		EE468D1425503998007A7941 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
-		EE468D1825503B3E007A7941 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		EE468D242550665E007A7941 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		EE468D282550682A007A7941 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
+		EE468D2F25508424007A7941 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		EE468D3025508424007A7941 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +72,11 @@
 		EE468CD325501AB0007A7941 /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				EE468D1D25504133007A7941 /* CountriesList */,
 				EE468D132550397E007A7941 /* Extensions */,
 				EE468CF525502E7F007A7941 /* Helpers */,
 				EE468CD425501AB0007A7941 /* AppDelegate.swift */,
 				EE468CD625501AB0007A7941 /* SceneDelegate.swift */,
-				EE468CD825501AB0007A7941 /* CountriesListViewController.swift */,
 				EE468CDA25501AB0007A7941 /* Main.storyboard */,
 				EE468CDD25501AB3007A7941 /* Assets.xcassets */,
 				EE468CDF25501AB3007A7941 /* LaunchScreen.storyboard */,
@@ -93,28 +85,14 @@
 			path = CountriesApp;
 			sourceTree = "<group>";
 		};
-		EE468CEC25502B30007A7941 /* BaseTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				EE468CED25502B80007A7941 /* BaseTableViewController.swift */,
-				EE468CF125502BA7007A7941 /* BaseRootTableView.swift */,
-			);
-			path = BaseTableViewController;
-			sourceTree = "<group>";
-		};
 		EE468CF525502E7F007A7941 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				EE468CEC25502B30007A7941 /* BaseTableViewController */,
 				EE468CFA25502ED0007A7941 /* BaseViewController.swift */,
 				EE468CFD25503069007A7941 /* ViewModel.swift */,
-				EE468CF625502E93007A7941 /* RootViewType.swift */,
 				EE468D00255030D9007A7941 /* KeyboardNotification.swift */,
-				EE468D0325503140007A7941 /* TableViewSectionsViewModel.swift */,
-				EE468D0A2550318B007A7941 /* TableCellType.swift */,
 				EE468D0D25503232007A7941 /* BaseConfigurableTableViewCell.swift */,
-				EE468D1025503253007A7941 /* TableCellConfigurable.swift */,
-				EE468D1825503B3E007A7941 /* Reusable.swift */,
+				EE468D242550665E007A7941 /* ConfigurableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -122,9 +100,27 @@
 		EE468D132550397E007A7941 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EE468D1425503998007A7941 /* UITableView+Register.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE468D1D25504133007A7941 /* CountriesList */ = {
+			isa = PBXGroup;
+			children = (
+				EE468D3425508437007A7941 /* View */,
+				EE468CD825501AB0007A7941 /* CountriesListViewController.swift */,
+				EE468D282550682A007A7941 /* CountriesListViewModel.swift */,
+			);
+			path = CountriesList;
+			sourceTree = "<group>";
+		};
+		EE468D3425508437007A7941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE468D2F25508424007A7941 /* CountryTableViewCell.swift */,
+				EE468D3025508424007A7941 /* CountryTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE468D3225508424007A7941 /* CountryTableViewCell.xib in Resources */,
 				EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */,
 				EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */,
 				EE468CDC25501AB0007A7941 /* Main.storyboard in Resources */,
@@ -197,20 +194,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE468D0B2550318B007A7941 /* TableCellType.swift in Sources */,
-				EE468D0425503140007A7941 /* TableViewSectionsViewModel.swift in Sources */,
-				EE468D1525503998007A7941 /* UITableView+Register.swift in Sources */,
 				EE468D01255030D9007A7941 /* KeyboardNotification.swift in Sources */,
-				EE468CF725502E93007A7941 /* RootViewType.swift in Sources */,
 				EE468CD925501AB0007A7941 /* CountriesListViewController.swift in Sources */,
+				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,
 				EE468CD525501AB0007A7941 /* AppDelegate.swift in Sources */,
-				EE468CEE25502B80007A7941 /* BaseTableViewController.swift in Sources */,
-				EE468CF225502BA7007A7941 /* BaseRootTableView.swift in Sources */,
-				EE468D1925503B3E007A7941 /* Reusable.swift in Sources */,
+				EE468D3125508424007A7941 /* CountryTableViewCell.swift in Sources */,
+				EE468D292550682A007A7941 /* CountriesListViewModel.swift in Sources */,
 				EE468CFB25502ED0007A7941 /* BaseViewController.swift in Sources */,
 				EE468D0E25503232007A7941 /* BaseConfigurableTableViewCell.swift in Sources */,
 				EE468CFE25503069007A7941 /* ViewModel.swift in Sources */,
-				EE468D1125503253007A7941 /* TableCellConfigurable.swift in Sources */,
 				EE468CD725501AB0007A7941 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
