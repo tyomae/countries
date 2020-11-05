@@ -58,7 +58,7 @@ final class CountriesListViewModelImpl: ViewModel {
 			if let countries = countriesDict[key] {
 				var countryViewModels = [CellViewModel]()
 				for country in countries {
-					let countryViewModel = CountryViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
+					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
 					countryViewModels.append(countryViewModel)
 				}
 				sections.append(Section(title: key, cellViewModels: countryViewModels))

@@ -23,7 +23,6 @@ class BaseViewController<V: ViewModel>: UIViewController {
 	private let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
 	private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
 
-
 	override func viewDidLoad() {
 		self.setupViewModel()
 		self.bindViewModelStateHandler()
@@ -56,22 +55,9 @@ class BaseViewController<V: ViewModel>: UIViewController {
 
 	// MARK: - Haptic logic
 
-	func hapticError() {
-		self.notificationFeedbackGenerator.prepare()
-		self.notificationFeedbackGenerator.notificationOccurred(.error)
-	}
-
 	func hapticSelection() {
 		self.selectionFeedbackGenerator.prepare()
 		self.selectionFeedbackGenerator.selectionChanged()
-	}
-
-	// MARK: - Appearance logic
-
-	func setupLargeTitle() {
-		self.navigationController?.navigationBar.prefersLargeTitles = true
-		self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-		self.title = self.tabBarItem.title
 	}
 
 	// MARK: - Private logic

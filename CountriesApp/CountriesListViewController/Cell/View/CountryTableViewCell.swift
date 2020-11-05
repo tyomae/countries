@@ -19,7 +19,7 @@ class CountryTableViewCell: UITableViewCell, ConfigurableView {
 	@IBOutlet weak var regionLabel: UILabel!
 	@IBOutlet weak var flagLabel: UILabel!
 	
-	func configure(with model: CountryViewModel) {
+	func configure(with model: CountryCellViewModel) {
 		self.countryNameLabel.text = model.countryName
 		self.regionLabel.text = model.regionName
 		self.flagLabel.text = model.emojiFlag

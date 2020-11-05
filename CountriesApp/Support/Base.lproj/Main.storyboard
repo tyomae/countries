@@ -35,7 +35,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xMG-cr-Fy0">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fei-NA-SLN"/>
@@ -50,11 +49,30 @@
                     <navigationItem key="navigationItem" title="Countries search" largeTitleDisplayMode="always" id="onN-dn-i4Q"/>
                     <connections>
                         <outlet property="tableView" destination="xMG-cr-Fy0" id="B2x-fO-oYK"/>
+                        <segue destination="K46-Jh-sJ0" kind="show" identifier="segue" id="Hd6-lv-G63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-Oa-EIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1831.8840579710147" y="-337.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="V55-ZX-Uik">
+            <objects>
+                <viewController id="K46-Jh-sJ0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lm1-ta-cNb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UNV-Zb-W1M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8gV-dw-Lf0">
+                        <barButtonItem key="backBarButtonItem" title="Countries" id="vUT-Nl-kV1"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DW9-Gi-PAp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2696" y="-338"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Qfc-hJ-ZCy">
@@ -78,7 +96,10 @@
         <scene sceneID="dsL-Fb-eyB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fhr-gV-rZ7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Countries" id="AT8-eM-bur"/>
+                    <tabBarItem key="tabBarItem" title="Countries" image="map" id="AT8-eM-bur">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="fet-O5-LR0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -95,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="map" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

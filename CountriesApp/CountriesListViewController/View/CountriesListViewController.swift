@@ -69,7 +69,11 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		
 		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
 		let cellViewModel = viewModel.sections[indexPath.section].cellViewModels[indexPath.row]
-		cell.configure(with: cellViewModel as! CountryViewModel)
+		cell.configure(with: cellViewModel as! CountryCellViewModel)
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		self.tableView.deselectRow(at: indexPath, animated: true)
 	}
 }

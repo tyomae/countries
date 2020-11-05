@@ -20,7 +20,7 @@
 		EE468D292550682A007A7941 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D282550682A007A7941 /* CountriesListViewModel.swift */; };
 		EE468D3125508424007A7941 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D2F25508424007A7941 /* CountryTableViewCell.swift */; };
 		EE468D3225508424007A7941 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE468D3025508424007A7941 /* CountryTableViewCell.xib */; };
-		EE468D4425516D6D007A7941 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D4325516D6D007A7941 /* CountryViewModel.swift */; };
+		EE468D4425516D6D007A7941 /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D4325516D6D007A7941 /* CountryCellViewModel.swift */; };
 		EE468D7A255179FF007A7941 /* UITableView+registerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D79255179FF007A7941 /* UITableView+registerCell.swift */; };
 		EE468D8825519701007A7941 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D8725519701007A7941 /* Country.swift */; };
 		EE468D8C2551974E007A7941 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D8B2551974E007A7941 /* NetworkClient.swift */; };
@@ -29,6 +29,8 @@
 		EE468D952551A102007A7941 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D942551A102007A7941 /* Location.swift */; };
 		EE468D992551B725007A7941 /* TextUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D982551B725007A7941 /* TextUtilities.swift */; };
 		EE468DA22554217F007A7941 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DA12554217F007A7941 /* CellViewModel.swift */; };
+		EE468DA825544D59007A7941 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DA725544D58007A7941 /* CountryViewController.swift */; };
+		EE468DAF25544F40007A7941 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DAE25544F40007A7941 /* CountryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,7 @@
 		EE468D282550682A007A7941 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
 		EE468D2F25508424007A7941 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		EE468D3025508424007A7941 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
-		EE468D4325516D6D007A7941 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		EE468D4325516D6D007A7941 /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		EE468D79255179FF007A7941 /* UITableView+registerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+registerCell.swift"; sourceTree = "<group>"; };
 		EE468D8725519701007A7941 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EE468D8B2551974E007A7941 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		EE468D942551A102007A7941 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EE468D982551B725007A7941 /* TextUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilities.swift; sourceTree = "<group>"; };
 		EE468DA12554217F007A7941 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		EE468DA725544D58007A7941 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		EE468DAE25544F40007A7941 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +92,10 @@
 		EE468CD325501AB0007A7941 /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE468D86255196EC007A7941 /* Models */,
-				EE468D1D25504133007A7941 /* CountriesList */,
+				EE468D1D25504133007A7941 /* CountriesListViewController */,
+				EE468DA425544C8E007A7941 /* CountryViewController */,
 				EE468D8425519645007A7941 /* Services */,
+				EE468D86255196EC007A7941 /* Models */,
 				EE468CF525502E7F007A7941 /* Helpers */,
 				EE468D132550397E007A7941 /* Extensions */,
 				EE468D8125519367007A7941 /* Support */,
@@ -119,14 +124,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		EE468D1D25504133007A7941 /* CountriesList */ = {
+		EE468D1D25504133007A7941 /* CountriesListViewController */ = {
 			isa = PBXGroup;
 			children = (
 				EE468D4225516C48007A7941 /* View */,
 				EE468D4125516C39007A7941 /* ViewModel */,
 				EE468D3425508437007A7941 /* Cell */,
 			);
-			path = CountriesList;
+			path = CountriesListViewController;
 			sourceTree = "<group>";
 		};
 		EE468D3425508437007A7941 /* Cell */ = {
@@ -150,7 +155,7 @@
 		EE468D3D25516B81007A7941 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EE468D4325516D6D007A7941 /* CountryViewModel.swift */,
+				EE468D4325516D6D007A7941 /* CountryCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,6 +214,39 @@
 				EE468D942551A102007A7941 /* Location.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EE468DA425544C8E007A7941 /* CountryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE468DAB25544D62007A7941 /* View */,
+				EE468DAD25544F19007A7941 /* ViewModel */,
+				EE468DB225544F55007A7941 /* Cells */,
+			);
+			path = CountryViewController;
+			sourceTree = "<group>";
+		};
+		EE468DAB25544D62007A7941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE468DA725544D58007A7941 /* CountryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE468DAD25544F19007A7941 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE468DAE25544F40007A7941 /* CountryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE468DB225544F55007A7941 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,11 +329,13 @@
 				EE468D992551B725007A7941 /* TextUtilities.swift in Sources */,
 				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,
 				EE468D8825519701007A7941 /* Country.swift in Sources */,
+				EE468DAF25544F40007A7941 /* CountryViewModel.swift in Sources */,
 				EE468CD525501AB0007A7941 /* AppDelegate.swift in Sources */,
-				EE468D4425516D6D007A7941 /* CountryViewModel.swift in Sources */,
+				EE468D4425516D6D007A7941 /* CountryCellViewModel.swift in Sources */,
 				EE468D3125508424007A7941 /* CountryTableViewCell.swift in Sources */,
 				EE468D292550682A007A7941 /* CountriesListViewModel.swift in Sources */,
 				EE468CFB25502ED0007A7941 /* BaseViewController.swift in Sources */,
+				EE468DA825544D59007A7941 /* CountryViewController.swift in Sources */,
 				EE468CFE25503069007A7941 /* ViewModel.swift in Sources */,
 				EE468D8C2551974E007A7941 /* NetworkClient.swift in Sources */,
 				EE468D7A255179FF007A7941 /* UITableView+registerCell.swift in Sources */,
