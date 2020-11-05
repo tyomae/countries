@@ -31,6 +31,13 @@
 		EE468DA22554217F007A7941 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DA12554217F007A7941 /* CellViewModel.swift */; };
 		EE468DA825544D59007A7941 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DA725544D58007A7941 /* CountryViewController.swift */; };
 		EE468DAF25544F40007A7941 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DAE25544F40007A7941 /* CountryViewModel.swift */; };
+		EE468DBD25545579007A7941 /* CountriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE468DBB25545579007A7941 /* CountriesListViewController.xib */; };
+		EE468DC525545676007A7941 /* CountryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE468DC325545676007A7941 /* CountryViewController.xib */; };
+		EE468DCC25545B15007A7941 /* CountryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DCA25545B15007A7941 /* CountryInfoTableViewCell.swift */; };
+		EE468DCD25545B15007A7941 /* CountryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE468DCB25545B15007A7941 /* CountryInfoTableViewCell.xib */; };
+		EE468DD025545F5C007A7941 /* BaseCountryInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DCF25545F5B007A7941 /* BaseCountryInfoCellViewModel.swift */; };
+		EE468DD325546007007A7941 /* PopulationInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DD225546007007A7941 /* PopulationInfoCellViewModel.swift */; };
+		EE468DD725546061007A7941 /* AreaInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +67,13 @@
 		EE468DA12554217F007A7941 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		EE468DA725544D58007A7941 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		EE468DAE25544F40007A7941 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		EE468DBB25545579007A7941 /* CountriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesListViewController.xib; sourceTree = "<group>"; };
+		EE468DC325545676007A7941 /* CountryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryViewController.xib; sourceTree = "<group>"; };
+		EE468DCA25545B15007A7941 /* CountryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoTableViewCell.swift; sourceTree = "<group>"; };
+		EE468DCB25545B15007A7941 /* CountryInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryInfoTableViewCell.xib; sourceTree = "<group>"; };
+		EE468DCF25545F5B007A7941 /* BaseCountryInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCountryInfoCellViewModel.swift; sourceTree = "<group>"; };
+		EE468DD225546007007A7941 /* PopulationInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulationInfoCellViewModel.swift; sourceTree = "<group>"; };
+		EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaInfoCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				EE468CD825501AB0007A7941 /* CountriesListViewController.swift */,
+				EE468DBB25545579007A7941 /* CountriesListViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				EE468DA725544D58007A7941 /* CountryViewController.swift */,
+				EE468DC325545676007A7941 /* CountryViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,8 +261,29 @@
 		EE468DB225544F55007A7941 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EE468DB7255452BB007A7941 /* View */,
+				EE468DB6255452A8007A7941 /* ViewModels */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		EE468DB6255452A8007A7941 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EE468DCF25545F5B007A7941 /* BaseCountryInfoCellViewModel.swift */,
+				EE468DD225546007007A7941 /* PopulationInfoCellViewModel.swift */,
+				EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EE468DB7255452BB007A7941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE468DCA25545B15007A7941 /* CountryInfoTableViewCell.swift */,
+				EE468DCB25545B15007A7941 /* CountryInfoTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,8 +345,11 @@
 			files = (
 				EE468D3225508424007A7941 /* CountryTableViewCell.xib in Resources */,
 				EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */,
+				EE468DCD25545B15007A7941 /* CountryInfoTableViewCell.xib in Resources */,
 				EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */,
 				EE468CDC25501AB0007A7941 /* Main.storyboard in Resources */,
+				EE468DBD25545579007A7941 /* CountriesListViewController.xib in Resources */,
+				EE468DC525545676007A7941 /* CountryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +366,12 @@
 				EE468D92255197A2007A7941 /* CountryService.swift in Sources */,
 				EE468DA22554217F007A7941 /* CellViewModel.swift in Sources */,
 				EE468D952551A102007A7941 /* Location.swift in Sources */,
+				EE468DD025545F5C007A7941 /* BaseCountryInfoCellViewModel.swift in Sources */,
 				EE468D992551B725007A7941 /* TextUtilities.swift in Sources */,
 				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,
+				EE468DCC25545B15007A7941 /* CountryInfoTableViewCell.swift in Sources */,
+				EE468DD325546007007A7941 /* PopulationInfoCellViewModel.swift in Sources */,
+				EE468DD725546061007A7941 /* AreaInfoCellViewModel.swift in Sources */,
 				EE468D8825519701007A7941 /* Country.swift in Sources */,
 				EE468DAF25544F40007A7941 /* CountryViewModel.swift in Sources */,
 				EE468CD525501AB0007A7941 /* AppDelegate.swift in Sources */,

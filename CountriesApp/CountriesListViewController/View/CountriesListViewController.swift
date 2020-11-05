@@ -75,5 +75,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
+		let vc = CountryViewController()
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

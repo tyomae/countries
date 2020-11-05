@@ -29,26 +29,8 @@
         <scene sceneID="tGE-C3-aEs">
             <objects>
                 <viewController id="9wf-ca-Js1" customClass="CountriesListViewController" customModule="CountriesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t1w-du-Gvi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xMG-cr-Fy0">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fei-NA-SLN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="xMG-cr-Fy0" firstAttribute="leading" secondItem="fei-NA-SLN" secondAttribute="leading" id="J4w-bA-feH"/>
-                            <constraint firstItem="xMG-cr-Fy0" firstAttribute="top" secondItem="fei-NA-SLN" secondAttribute="top" id="TRC-pj-srz"/>
-                            <constraint firstItem="fei-NA-SLN" firstAttribute="bottom" secondItem="xMG-cr-Fy0" secondAttribute="bottom" id="cQn-N7-nQw"/>
-                            <constraint firstItem="fei-NA-SLN" firstAttribute="trailing" secondItem="xMG-cr-Fy0" secondAttribute="trailing" id="e9u-OD-hzq"/>
-                        </constraints>
-                    </view>
                     <navigationItem key="navigationItem" title="Countries search" largeTitleDisplayMode="always" id="onN-dn-i4Q"/>
                     <connections>
-                        <outlet property="tableView" destination="xMG-cr-Fy0" id="B2x-fO-oYK"/>
                         <segue destination="K46-Jh-sJ0" kind="show" identifier="segue" id="Hd6-lv-G63"/>
                     </connections>
                 </viewController>
@@ -56,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="1831.8840579710147" y="-337.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Country View Controller-->
         <scene sceneID="V55-ZX-Uik">
             <objects>
-                <viewController id="K46-Jh-sJ0" sceneMemberID="viewController">
+                <viewController id="K46-Jh-sJ0" customClass="CountryViewController" customModule="CountriesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lm1-ta-cNb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

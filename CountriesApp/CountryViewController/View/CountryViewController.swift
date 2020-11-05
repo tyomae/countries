@@ -8,10 +8,20 @@
 import UIKit
 
 class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableViewDataSource, UITableViewDelegate {
-
+	
+	@IBOutlet weak var tableView: UITableView! {
+		didSet {
+			tableView.registerNib(for: CountryInfoTableViewCell.self)
+		}
+	}
+	@IBOutlet weak var flagImageView: UIImageView!
+	@IBOutlet weak var countryNameLabel: UILabel!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.tableView.delegate = self
+		self.tableView.dataSource = self
     }
     
 	override func setupViewModel() {
