@@ -38,19 +38,19 @@ class BaseNetworkService {
 	func call<T: Decodable>(with request: URLRequest,
 							completion: @escaping((Result<T, APIError>) -> Void)) {
 		let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
-				if let data = data, let object = try? JSONDecoder().decode(T.self, from: data) {
-					DispatchQueue.main.async {
+			if let data = data, let object = try? JSONDecoder().decode(T.self, from: data) {
+				DispatchQueue.main.async {
 					completion(Result.success(object))
-					}
-				} else if let error = error as NSError?, error.domain == NSURLErrorDomain, error.code == NSURLErrorNotConnectedToInternet {
-					DispatchQueue.main.async {
-					completion(Result.failure(.noInternet))
-					}
-				} else {
-					DispatchQueue.main.async {
-					completion(Result.failure(.serverError))
-					}
 				}
+			} else if let error = error as NSError?, error.domain == NSURLErrorDomain, error.code == NSURLErrorNotConnectedToInternet {
+				DispatchQueue.main.async {
+					completion(Result.failure(.noInternet))
+				}
+			} else {
+				DispatchQueue.main.async {
+					completion(Result.failure(.serverError))
+				}
+			}
 			
 		}
 		dataTask.resume()

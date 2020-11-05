@@ -23,14 +23,19 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		super.viewDidLoad()
 		
 		self.setupSearchBar()
-		self.getCountries()
-		
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 	}
 	
 	override func setupViewModel() {
 		self.viewModel = CountriesListViewModelImpl()
+	}
+	
+	override func processViewModel(state: CountriesListViewModelImpl.State) {
+		switch state {
+			case .dataLoaded:
+				self.tableView.reloadData()
+		}
 	}
 	
 	override var hidesKeyboardAfterTapOnRootView: Bool {
@@ -44,34 +49,27 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		navigationItem.searchController = searchController
 	}
 	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return viewModel.sections.count
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return countries.count
+		return viewModel.sections[section].cellViewModels.count
+	}
+
+	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+		return viewModel.sections.map{ $0.title }
+	}
+	
+	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return viewModel.sections[section].title
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
 		
-		let country = countries[indexPath.row]
-		let countryCell = CountryViewModelImpl(countryName: country.name,
-											   regionName: country.region,
-											   countryCode: country.countryCode)
-		cell.configure(with: countryCell)
+		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+		let cellViewModel = viewModel.sections[indexPath.section].cellViewModels[indexPath.row]
+		cell.configure(with: cellViewModel as! CountryViewModel)
 		return cell
 	}
-	
-	private func getCountries() {
-		hotelService.getCountries {
-			switch $0{
-			case let .success(countries):
-				self.countries.removeAll()
-				self.countries = countries
-				self.tableView.reloadData()
-			case let .failure(error):
-				self.countries.removeAll()
-				self.tableView.reloadData()
-				print(error)
-			}
-		}
-	}
 }
-

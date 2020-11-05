@@ -28,6 +28,7 @@
 		EE468D92255197A2007A7941 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D91255197A2007A7941 /* CountryService.swift */; };
 		EE468D952551A102007A7941 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D942551A102007A7941 /* Location.swift */; };
 		EE468D992551B725007A7941 /* TextUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468D982551B725007A7941 /* TextUtilities.swift */; };
+		EE468DA22554217F007A7941 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DA12554217F007A7941 /* CellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EE468D91255197A2007A7941 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		EE468D942551A102007A7941 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EE468D982551B725007A7941 /* TextUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilities.swift; sourceTree = "<group>"; };
+		EE468DA12554217F007A7941 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				EE468D00255030D9007A7941 /* KeyboardNotification.swift */,
 				EE468D242550665E007A7941 /* ConfigurableView.swift */,
 				EE468D982551B725007A7941 /* TextUtilities.swift */,
+				EE468DA12554217F007A7941 /* CellViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				EE468D8F2551977A007A7941 /* BaseNetworkService.swift in Sources */,
 				EE468CD925501AB0007A7941 /* CountriesListViewController.swift in Sources */,
 				EE468D92255197A2007A7941 /* CountryService.swift in Sources */,
+				EE468DA22554217F007A7941 /* CellViewModel.swift in Sources */,
 				EE468D952551A102007A7941 /* Location.swift in Sources */,
 				EE468D992551B725007A7941 /* TextUtilities.swift in Sources */,
 				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,

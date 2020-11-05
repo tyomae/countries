@@ -13,7 +13,7 @@ protocol CountryViewModel {
 	var emojiFlag: String { get }
 }
 
-final class CountryViewModelImpl: CountryViewModel {
+final class CountryViewModelImpl: CountryViewModel, CellViewModel {
 	let countryName: String
 	let regionName: String
 	let emojiFlag: String
