@@ -32,6 +32,7 @@ class BaseViewController<V: ViewModel>: UIViewController {
 		if self.hidesKeyboardAfterTapOnRootView {
 			self.setupResignTap()
 		}
+		self.hideNavigationBarSeparator()
 	}
 
 	// MARK: - Public API
@@ -127,5 +128,10 @@ class BaseViewController<V: ViewModel>: UIViewController {
 			return
 		}
 		self.keyboardDidChangeSize(with: keyboardNotification)
+	}
+	
+	private func hideNavigationBarSeparator() {
+		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+		navigationController?.navigationBar.shadowImage = UIImage()
 	}
 }

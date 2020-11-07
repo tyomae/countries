@@ -31,7 +31,7 @@
                 <viewController id="9wf-ca-Js1" customClass="CountriesListViewController" customModule="CountriesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Countries search" largeTitleDisplayMode="always" id="onN-dn-i4Q"/>
                     <connections>
-                        <segue destination="K46-Jh-sJ0" kind="show" identifier="segue" id="Hd6-lv-G63"/>
+                        <segue destination="K46-Jh-sJ0" kind="show" identifier="showCountry" id="Hd6-lv-G63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-Oa-EIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

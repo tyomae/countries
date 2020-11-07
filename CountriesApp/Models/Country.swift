@@ -15,6 +15,9 @@ struct Country: Decodable {
 	var population: Int
 	var location: Location?
 	var countryCode: String
+	var area: Double?
+	var timezone: String
+	var currencies: [Currency]?
 	
 	enum CodingKeys: String, CodingKey {
 		case name = "name"
@@ -24,6 +27,9 @@ struct Country: Decodable {
 		case population = "population"
 		case location = "latlng"
 		case countryCode = "alpha2Code"
+		case area = "area"
+		case timezone = "timezones"
+		case currencies = "currencies"
 	}
 	
 	init(from decoder: Decoder) throws {
@@ -38,6 +44,10 @@ struct Country: Decodable {
 			self.location = Location(lat: latlon[0], lon: latlon[1])
 		}
 		self.countryCode = try values.decode(String.self, forKey: .countryCode)
+		self.area = try? values.decode(Double.self, forKey: .area)
+		let timezones = try values.decode([String].self, forKey: .timezone)
+		self.timezone = timezones[0]
+		self.currencies = try? values.decode([Currency].self, forKey: .currencies)
 	}	
 }
 

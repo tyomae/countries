@@ -20,8 +20,9 @@ final class CountriesListViewModelImpl: ViewModel {
 	
 	var stateHandler: ((State) -> Void)?
 	var sections = [Section]()
+	private var countriesDict = [String : [Country]]()
 	
-	private var countries = [Country]()
+	var countries = [Country]()
 	private var countryService = CountryServiceImpl()
 	
 	init() {
@@ -44,18 +45,17 @@ final class CountriesListViewModelImpl: ViewModel {
 	}
 	
 	private func getSectionsDict() {
-		var countriesDict = [String : [Country]]()
 		for country in countries {
 			let firstCountryLetter = String(country.name.prefix(1))
-			if countriesDict[firstCountryLetter] != nil {
-				countriesDict[firstCountryLetter]?.append(country)
+			if self.countriesDict[firstCountryLetter] != nil {
+				self.countriesDict[firstCountryLetter]?.append(country)
 			} else {
-				countriesDict[firstCountryLetter] = [country]
+				self.countriesDict[firstCountryLetter] = [country]
 			}
 		}
-		let keys = countriesDict.keys.sorted()
+		let keys = self.countriesDict.keys.sorted()
 		for key in keys {
-			if let countries = countriesDict[key] {
+			if let countries = self.countriesDict[key] {
 				var countryViewModels = [CellViewModel]()
 				for country in countries {
 					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
@@ -65,5 +65,11 @@ final class CountriesListViewModelImpl: ViewModel {
 			}
 		}
 		self.stateHandler?(.dataLoaded)
+	}
+	
+	func getCountrybyIndexPath(indexPath: IndexPath)-> Country? {
+		let keyByIndexPath = self.countriesDict.keys.sorted()[indexPath.section]
+		let countriesByKey = countriesDict[keyByIndexPath]
+		return countriesByKey?[indexPath.row]
 	}
 }

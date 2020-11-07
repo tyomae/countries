@@ -56,7 +56,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return viewModel.sections[section].cellViewModels.count
 	}
-
+	
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
 		return viewModel.sections.map{ $0.title }
 	}
@@ -76,6 +76,9 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
 		let vc = CountryViewController()
+		guard let currentCountry = self.viewModel.getCountrybyIndexPath(indexPath: indexPath) else { return }
+		let viewModel = CountryViewModelImpl(country: currentCountry)
+		vc.viewModel = viewModel
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

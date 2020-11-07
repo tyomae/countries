@@ -5,14 +5,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryViewController" customModule="CountriesApp" customModuleProvider="target">
             <connections>
                 <outlet property="countryNameLabel" destination="ACB-bE-Rwa" id="wVx-A5-jgY"/>
-                <outlet property="flagImageView" destination="5bb-nO-9aK" id="hmC-vl-AhZ"/>
+                <outlet property="flagEmojiLabel" destination="BM7-p5-0wn" id="ua4-DE-XEs"/>
                 <outlet property="tableView" destination="5ka-9d-Iqo" id="GGs-tE-xXl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,40 +21,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5ka-9d-Iqo">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5ka-9d-Iqo">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     <view key="tableHeaderView" contentMode="scaleToFill" id="xFo-KF-0BY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5bb-nO-9aK">
-                                <rect key="frame" x="132" y="16" width="150" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="YhG-uL-yOS"/>
-                                    <constraint firstAttribute="height" constant="100" id="qfJ-FP-Nfi"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-bE-Rwa">
-                                <rect key="frame" x="117" y="124" width="180.5" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="137.5" y="179.5" width="139.5" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="0.72233518835616439" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM7-p5-0wn">
+                                <rect key="frame" x="73.5" y="0.0" width="267.5" height="179.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9491166472" green="0.94880193469999996" blue="0.96863096950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="5bb-nO-9aK" firstAttribute="centerX" secondItem="xFo-KF-0BY" secondAttribute="centerX" id="3m5-xP-sm8"/>
-                            <constraint firstItem="5bb-nO-9aK" firstAttribute="top" secondItem="xFo-KF-0BY" secondAttribute="top" constant="16" id="77l-1K-Zf7"/>
+                            <constraint firstItem="ACB-bE-Rwa" firstAttribute="top" secondItem="BM7-p5-0wn" secondAttribute="bottom" id="68y-Mw-f66"/>
                             <constraint firstItem="ACB-bE-Rwa" firstAttribute="centerX" secondItem="xFo-KF-0BY" secondAttribute="centerX" id="A5C-BR-ODx"/>
-                            <constraint firstAttribute="bottom" secondItem="ACB-bE-Rwa" secondAttribute="bottom" constant="4" id="Xe8-3c-tgb"/>
-                            <constraint firstItem="ACB-bE-Rwa" firstAttribute="top" secondItem="5bb-nO-9aK" secondAttribute="bottom" constant="8" symbolic="YES" id="xMZ-eg-Flw"/>
+                            <constraint firstAttribute="bottom" secondItem="ACB-bE-Rwa" secondAttribute="bottom" id="Xe8-3c-tgb"/>
+                            <constraint firstItem="BM7-p5-0wn" firstAttribute="top" secondItem="xFo-KF-0BY" secondAttribute="top" id="YqK-vs-d5z"/>
+                            <constraint firstItem="BM7-p5-0wn" firstAttribute="centerX" secondItem="xFo-KF-0BY" secondAttribute="centerX" id="cv9-0u-3nb"/>
                         </constraints>
                     </view>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.9491166472" green="0.94880193469999996" blue="0.96863096950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="5ka-9d-Iqo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0UD-tl-lPD"/>
                 <constraint firstItem="5ka-9d-Iqo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="83y-hl-xtb"/>
@@ -65,9 +63,4 @@
             <point key="canvasLocation" x="-184.05797101449278" y="75.669642857142847"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
