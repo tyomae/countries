@@ -11,7 +11,7 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 	
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
-			tableView.registerNib(for: CountryInfoTableViewCell.self)
+			tableView.registerNibs(for: [CountryInfoTableViewCell.self, MapTableViewCell.self])
 		}
 	}
 
@@ -51,11 +51,17 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let cell: CountryInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
 		let cellViewModel = viewModel.sections[indexPath.section].cellViewModels[indexPath.row]
-		cell.configure(with: cellViewModel as! BaseCountryInfoCellViewModel)
-		return cell
+		if let cellModel = cellViewModel as? BaseCountryInfoCellViewModel {
+			let cell: CountryInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+			cell.configure(with: cellModel)
+			return cell
+		} else if let cellModel = cellViewModel as? MapCellViewModel {
+			let cell: MapTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+			cell.configure(with: cellModel)
+			return cell
+		}
+		fatalError("Unknowned cellViewModel")
 	}
 }
 

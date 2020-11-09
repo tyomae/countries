@@ -43,6 +43,10 @@ final class CountryViewModelImpl: ViewModel {
 				BaseCountryInfoViewModelImpl(property: "Symbol", value: currency.symbol)
 			]))
 		}
+		if let latitude = country.location?.lat, let longitude = country.location?.lon {
+			sections.append(Section(title: "Country location", cellViewModels:
+										[MapCellViewModelImpl(latitude: latitude, longitude: longitude)]))
+		}
 		self.stateHandler?(.dataLoaded)
 	}
 }

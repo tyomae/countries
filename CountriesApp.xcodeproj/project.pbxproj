@@ -40,6 +40,9 @@
 		EE468DD725546061007A7941 /* AreaInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */; };
 		EE5F49E22556A2CA0040BB9A /* NumberFormatter+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49E12556A2CA0040BB9A /* NumberFormatter+Static.swift */; };
 		EE5F49E52556A6F20040BB9A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49E42556A6F20040BB9A /* Currency.swift */; };
+		EE5F49EA2557F4400040BB9A /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */; };
+		EE5F49EB2557F4400040BB9A /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */; };
+		EE5F49EE2557F5E80040BB9A /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */; };
 		F4F9E835174EC7F2120213DF /* Pods_CountriesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4339F762C6A568F54758A874 /* Pods_CountriesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,9 @@
 		EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaInfoCellViewModel.swift; sourceTree = "<group>"; };
 		EE5F49E12556A2CA0040BB9A /* NumberFormatter+Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Static.swift"; sourceTree = "<group>"; };
 		EE5F49E42556A6F20040BB9A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
+		EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +300,7 @@
 				EE468DCF25545F5B007A7941 /* BaseCountryInfoCellViewModel.swift */,
 				EE468DD225546007007A7941 /* PopulationInfoCellViewModel.swift */,
 				EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */,
+				EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -303,6 +310,8 @@
 			children = (
 				EE468DCA25545B15007A7941 /* CountryInfoTableViewCell.swift */,
 				EE468DCB25545B15007A7941 /* CountryInfoTableViewCell.xib */,
+				EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */,
+				EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +389,7 @@
 				EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */,
 				EE468CDC25501AB0007A7941 /* Main.storyboard in Resources */,
 				EE468DBD25545579007A7941 /* CountriesListViewController.xib in Resources */,
+				EE5F49EB2557F4400040BB9A /* MapTableViewCell.xib in Resources */,
 				EE468DC525545676007A7941 /* CountryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +437,7 @@
 				EE5F49E52556A6F20040BB9A /* Currency.swift in Sources */,
 				EE468D992551B725007A7941 /* TextUtilities.swift in Sources */,
 				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,
+				EE5F49EE2557F5E80040BB9A /* MapCellViewModel.swift in Sources */,
 				EE468DCC25545B15007A7941 /* CountryInfoTableViewCell.swift in Sources */,
 				EE468DD325546007007A7941 /* PopulationInfoCellViewModel.swift in Sources */,
 				EE468DD725546061007A7941 /* AreaInfoCellViewModel.swift in Sources */,
@@ -436,6 +447,7 @@
 				EE468D4425516D6D007A7941 /* CountryCellViewModel.swift in Sources */,
 				EE468D3125508424007A7941 /* CountryTableViewCell.swift in Sources */,
 				EE468D292550682A007A7941 /* CountriesListViewModel.swift in Sources */,
+				EE5F49EA2557F4400040BB9A /* MapTableViewCell.swift in Sources */,
 				EE468CFB25502ED0007A7941 /* BaseViewController.swift in Sources */,
 				EE468DA825544D59007A7941 /* CountryViewController.swift in Sources */,
 				EE468CFE25503069007A7941 /* ViewModel.swift in Sources */,
