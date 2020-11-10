@@ -9,20 +9,17 @@ import UIKit
 
 class CountriesListViewController: BaseViewController<CountriesListViewModelImpl>, UITableViewDataSource, UITableViewDelegate {
 	
+	var searchController: UISearchController!
+	
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
 			tableView.registerNib(for: CountryTableViewCell.self)
 		}
 	}
 	
-	var searchController: UISearchController!
-	private var countries = [Country]()
-	private var hotelService = CountryServiceImpl()
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.setupSearchBar()
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
 	}
@@ -35,18 +32,12 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		switch state {
 			case .dataLoaded:
 				self.tableView.reloadData()
+				self.setupSearchBar()
 		}
 	}
 	
 	override var hidesKeyboardAfterTapOnRootView: Bool {
 		true
-	}
-	
-	private func setupSearchBar() {
-		searchController = UISearchController(searchResultsController: nil)
-		searchController.searchBar.placeholder = "Search countries"
-		navigationItem.hidesSearchBarWhenScrolling = false
-		navigationItem.searchController = searchController
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,9 +66,29 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
-		let vc = CountryViewController()
 		guard let currentCountry = self.viewModel.getCountrybyIndexPath(indexPath: indexPath) else { return }
-		let viewModel = CountryViewModelImpl(country: currentCountry)
+		self.openCountryVC(with: currentCountry)
+	}
+	
+	private func setupSearchBar() {
+		let countriesResultsVC = CountriesResultsViewController()
+		let viewModel = CountriesResultsViewModelImpl(countries: self.viewModel.countries)
+		countriesResultsVC.viewModel = viewModel
+		countriesResultsVC.selectedCountry = { [weak self] country in
+			self?.openCountryVC(with: country)
+		}
+		searchController = UISearchController(searchResultsController: countriesResultsVC)
+		searchController.searchResultsUpdater = countriesResultsVC
+		searchController.searchBar.placeholder = "Search countries"
+		searchController.obscuresBackgroundDuringPresentation = false
+		navigationItem.hidesSearchBarWhenScrolling = false
+		navigationItem.searchController = searchController
+		definesPresentationContext = true
+	}
+	
+	private func openCountryVC(with country: Country) {
+		let vc = CountryViewController()
+		let viewModel = CountryViewModelImpl(country: country)
 		vc.viewModel = viewModel
 		self.navigationController?.pushViewController(vc, animated: true)
 	}

@@ -36,7 +36,10 @@ final class CountriesListViewModelImpl: ViewModel {
 			switch $0 {
 				case let .success(countries):
 					self.countries = countries
-					self.getSectionsDict()
+					self.generateSectionsDict()
+					if countries.isEmpty == false {
+						self.stateHandler?(.dataLoaded)
+					}
 				case let .failure(error):
 					//TODO: make error
 					print(error)
@@ -44,7 +47,7 @@ final class CountriesListViewModelImpl: ViewModel {
 		}
 	}
 	
-	private func getSectionsDict() {
+	private func generateSectionsDict() {
 		for country in countries {
 			let firstCountryLetter = String(country.name.prefix(1))
 			if self.countriesDict[firstCountryLetter] != nil {
@@ -64,7 +67,6 @@ final class CountriesListViewModelImpl: ViewModel {
 				sections.append(Section(title: key, cellViewModels: countryViewModels))
 			}
 		}
-		self.stateHandler?(.dataLoaded)
 	}
 	
 	func getCountrybyIndexPath(indexPath: IndexPath)-> Country? {

@@ -25,6 +25,21 @@
             </objects>
             <point key="canvasLocation" x="924" y="393"/>
         </scene>
+        <!--Countries Results View Controller-->
+        <scene sceneID="lHn-9G-fm4">
+            <objects>
+                <viewController storyboardIdentifier="CountriesResultsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xsn-F2-hiy" customClass="CountriesResultsViewController" customModule="CountriesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Til-t6-Eg5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Mm-cM-0c2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkH-OH-9Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="-1001"/>
+        </scene>
         <!--Countries search-->
         <scene sceneID="tGE-C3-aEs">
             <objects>

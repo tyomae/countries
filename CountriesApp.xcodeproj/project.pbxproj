@@ -43,6 +43,9 @@
 		EE5F49EA2557F4400040BB9A /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */; };
 		EE5F49EB2557F4400040BB9A /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */; };
 		EE5F49EE2557F5E80040BB9A /* MapCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */; };
+		EE5F49F4255A904A0040BB9A /* CountriesResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49F2255A904A0040BB9A /* CountriesResultsViewController.swift */; };
+		EE5F49F5255A904A0040BB9A /* CountriesResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5F49F3255A904A0040BB9A /* CountriesResultsViewController.xib */; };
+		EE5F49FB255A96DB0040BB9A /* CountriesResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F49FA255A96DB0040BB9A /* CountriesResultsViewModel.swift */; };
 		F4F9E835174EC7F2120213DF /* Pods_CountriesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4339F762C6A568F54758A874 /* Pods_CountriesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,9 @@
 		EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
 		EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellViewModel.swift; sourceTree = "<group>"; };
+		EE5F49F2255A904A0040BB9A /* CountriesResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResultsViewController.swift; sourceTree = "<group>"; };
+		EE5F49F3255A904A0040BB9A /* CountriesResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesResultsViewController.xib; sourceTree = "<group>"; };
+		EE5F49FA255A96DB0040BB9A /* CountriesResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResultsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 		EE468CD325501AB0007A7941 /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				EE5F49F7255A96780040BB9A /* CountriesResultsViewController */,
 				EE468D1D25504133007A7941 /* CountriesListViewController */,
 				EE468DA425544C8E007A7941 /* CountryViewController */,
 				EE468D8425519645007A7941 /* Services */,
@@ -316,6 +323,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EE5F49F7255A96780040BB9A /* CountriesResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE5F49F8255A96930040BB9A /* View */,
+				EE5F49F9255A96A40040BB9A /* ViewModel */,
+			);
+			path = CountriesResultsViewController;
+			sourceTree = "<group>";
+		};
+		EE5F49F8255A96930040BB9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE5F49F2255A904A0040BB9A /* CountriesResultsViewController.swift */,
+				EE5F49F3255A904A0040BB9A /* CountriesResultsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE5F49F9255A96A40040BB9A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE5F49FA255A96DB0040BB9A /* CountriesResultsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F735BCBFA41C05D76EFBB177 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE468D3225508424007A7941 /* CountryTableViewCell.xib in Resources */,
+				EE5F49F5255A904A0040BB9A /* CountriesResultsViewController.xib in Resources */,
 				EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */,
 				EE468DCD25545B15007A7941 /* CountryInfoTableViewCell.xib in Resources */,
 				EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */,
@@ -435,10 +469,12 @@
 				EE468DD025545F5C007A7941 /* BaseCountryInfoCellViewModel.swift in Sources */,
 				EE5F49E22556A2CA0040BB9A /* NumberFormatter+Static.swift in Sources */,
 				EE5F49E52556A6F20040BB9A /* Currency.swift in Sources */,
+				EE5F49F4255A904A0040BB9A /* CountriesResultsViewController.swift in Sources */,
 				EE468D992551B725007A7941 /* TextUtilities.swift in Sources */,
 				EE468D252550665E007A7941 /* ConfigurableView.swift in Sources */,
 				EE5F49EE2557F5E80040BB9A /* MapCellViewModel.swift in Sources */,
 				EE468DCC25545B15007A7941 /* CountryInfoTableViewCell.swift in Sources */,
+				EE5F49FB255A96DB0040BB9A /* CountriesResultsViewModel.swift in Sources */,
 				EE468DD325546007007A7941 /* PopulationInfoCellViewModel.swift in Sources */,
 				EE468DD725546061007A7941 /* AreaInfoCellViewModel.swift in Sources */,
 				EE468D8825519701007A7941 /* Country.swift in Sources */,
