@@ -9,7 +9,7 @@ import UIKit
 
 class CountriesResultsViewController: BaseViewController<CountriesResultsViewModelImpl>, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
 	
-	var selectedCountry: ((Country) -> ())?
+	var selectedCountry: ((CountryEntity) -> ())?
 	
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {

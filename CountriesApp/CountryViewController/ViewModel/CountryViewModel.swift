@@ -20,9 +20,9 @@ final class CountryViewModelImpl: ViewModel {
 	
 	var sections = [Section]()
 	var stateHandler: ((State) -> Void)?
-	let country: Country
+	let country: CountryEntity
 	
-	init(country: Country) {
+	init(country: CountryEntity) {
 		self.country = country
 		sections.append(Section(title: "Basic", cellViewModels: [
 			BaseCountryInfoViewModelImpl(property: "Capital", value: country.capital),
@@ -30,12 +30,11 @@ final class CountryViewModelImpl: ViewModel {
 			BaseCountryInfoViewModelImpl(property: "Subregion", value: country.subregion)
 		]))
 		sections.append(Section(title: "Numerical characteristics", cellViewModels: [
-			AreaInfoCellViewModel(value: country.area ?? 0),
+			AreaInfoCellViewModel(value: country.area),
 			PopulationInfoCellViewModel(value: country.population),
 			BaseCountryInfoViewModelImpl(property: "Timezone", value: country.timezone)
 		]))
-		guard let currencies = country.currencies else { return }
-		for (index, currency) in currencies.enumerated() {
+		for (index, currency) in country.currencies.enumerated() {
 			let title = index == 0 ? "Currencies" : nil
 			sections.append(Section(title: title, cellViewModels: [
 				BaseCountryInfoViewModelImpl(property: "Code", value: currency.code),
@@ -43,7 +42,7 @@ final class CountryViewModelImpl: ViewModel {
 				BaseCountryInfoViewModelImpl(property: "Symbol", value: currency.symbol)
 			]))
 		}
-		if let latitude = country.location?.lat, let longitude = country.location?.lon {
+		if let latitude = country.location?.latitude, let longitude = country.location?.longitude {
 			sections.append(Section(title: "Country location", cellViewModels:
 										[MapCellViewModelImpl(latitude: latitude, longitude: longitude)]))
 		}

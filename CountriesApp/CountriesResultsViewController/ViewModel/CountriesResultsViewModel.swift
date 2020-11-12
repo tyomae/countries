@@ -5,14 +5,14 @@
 //  Created by Артем  Емельянов  on 10.11.2020.
 //
 
-import UIKit
+import Foundation
 
 final class CountriesResultsViewModelImpl: ViewModel {
 	
 	var stateHandler: ((State) -> Void)?
-	var filteredCountries = [Country]()
+	var filteredCountries = [CountryEntity]()
 	var cellViewModels = [CountryCellViewModel]()
-	private var countries = [Country]()
+	private var countries = [CountryEntity]()
 	
 	enum State {
 		case dataUpdated
@@ -22,7 +22,7 @@ final class CountriesResultsViewModelImpl: ViewModel {
 		case searchTextDidChanged(text: String)
 	}
 	
-	init(countries: [Country]) {
+	init(countries: [CountryEntity]) {
 		self.countries = countries
 		self.updateCellViewModels()
 	}

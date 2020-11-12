@@ -6,4 +6,6 @@ target 'CountriesApp' do
   use_frameworks!
 
 
+	pod 'RealmSwift'
+
 end

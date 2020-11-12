@@ -20,9 +20,8 @@ final class CountriesListViewModelImpl: ViewModel {
 	
 	var stateHandler: ((State) -> Void)?
 	var sections = [Section]()
-	private var countriesDict = [String : [Country]]()
-	
-	var countries = [Country]()
+	var countries = [CountryEntity]()
+	private var countriesDict = [String : [CountryEntity]]()
 	private var countryService = CountryServiceImpl()
 	
 	init() {
@@ -32,14 +31,14 @@ final class CountriesListViewModelImpl: ViewModel {
 	private func getCountries() {
 		countryService.getCountries { [weak self] in
 			guard let self = self else { return }
-			self.countries.removeAll()
 			switch $0 {
 				case let .success(countries):
 					self.countries = countries
 					self.generateSectionsDict()
-					if countries.isEmpty == false {
-						self.stateHandler?(.dataLoaded)
-					}
+//					if countries.isEmpty == false {
+//						self.stateHandler?(.dataLoaded)
+//					}
+					self.stateHandler?(.dataLoaded)
 				case let .failure(error):
 					//TODO: make error
 					print(error)
@@ -69,7 +68,7 @@ final class CountriesListViewModelImpl: ViewModel {
 		}
 	}
 	
-	func getCountrybyIndexPath(indexPath: IndexPath)-> Country? {
+	func getCountrybyIndexPath(indexPath: IndexPath)-> CountryEntity? {
 		let keyByIndexPath = self.countriesDict.keys.sorted()[indexPath.section]
 		let countriesByKey = countriesDict[keyByIndexPath]
 		return countriesByKey?[indexPath.row]

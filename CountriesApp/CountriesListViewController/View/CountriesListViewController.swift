@@ -31,8 +31,8 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	override func processViewModel(state: CountriesListViewModelImpl.State) {
 		switch state {
 			case .dataLoaded:
-				self.tableView.reloadData()
 				self.setupSearchBar()
+				self.tableView.reloadData()
 		}
 	}
 	
@@ -86,7 +86,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		definesPresentationContext = true
 	}
 	
-	private func openCountryVC(with country: Country) {
+	private func openCountryVC(with country: CountryEntity) {
 		let vc = CountryViewController()
 		let viewModel = CountryViewModelImpl(country: country)
 		vc.viewModel = viewModel
