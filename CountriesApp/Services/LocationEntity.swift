@@ -9,12 +9,19 @@ import Foundation
 import RealmSwift
 
 class LocationEntity: Object {
+	
+	@objc dynamic var countryCode: String = ""
 	@objc dynamic var latitude: Double = 0
 	@objc dynamic var longitude: Double = 0
 
-	convenience init(latitude: Double, longitude: Double) {
+	convenience init(countryCode: String, latitude: Double, longitude: Double) {
 		self.init()
+		self.countryCode = countryCode
 		self.latitude = latitude
 		self.longitude = longitude
+	}
+	
+	override class func primaryKey() -> String? {
+		"countryCode"
 	}
 }

@@ -21,7 +21,6 @@ class CountryEntity: Object {
 	@objc dynamic var isFavourite: Bool = false
 	@objc dynamic var location: LocationEntity?
 	let currencies = List<CurrencyEntity>()
-//	var location = LocationEntity()
 
 	convenience init(name: String,
 					 capital: String,
@@ -44,7 +43,7 @@ class CountryEntity: Object {
 		self.timezone = timezone
 		self.isFavourite = isFavourite
 		if let location = location {
-			self.location = LocationEntity(latitude: location.lat, longitude: location.lon)
+			self.location = LocationEntity(countryCode: countryCode, latitude: location.lat, longitude: location.lon)
 		}
 	}
 	

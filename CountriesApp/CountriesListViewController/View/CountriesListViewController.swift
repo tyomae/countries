@@ -22,6 +22,8 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
+		
+		self.setupSearchBar()
 	}
 	
 	override func setupViewModel() {
@@ -83,12 +85,15 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		searchController.obscuresBackgroundDuringPresentation = false
 		navigationItem.hidesSearchBarWhenScrolling = false
 		navigationItem.searchController = searchController
+		
 		definesPresentationContext = true
 	}
 	
 	private func openCountryVC(with country: CountryEntity) {
 		let vc = CountryViewController()
-		let viewModel = CountryViewModelImpl(country: country)
+		//TODO: Update isFavourite
+		let isFavourite = viewModel.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
+		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel
 		self.navigationController?.pushViewController(vc, animated: true)
 	}

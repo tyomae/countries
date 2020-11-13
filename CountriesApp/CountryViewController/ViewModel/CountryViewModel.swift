@@ -16,14 +16,22 @@ final class CountryViewModelImpl: ViewModel {
 	
 	enum State {
 		case dataLoaded
+		case isFavouriteUpdated
+	}
+	
+	enum Action {
+		case changeFavourite
 	}
 	
 	var sections = [Section]()
 	var stateHandler: ((State) -> Void)?
 	let country: CountryEntity
+	var isFavourite: Bool
+	private let favouriteCountryService = FavouriteCountryServiceImpl()
 	
-	init(country: CountryEntity) {
+	init(country: CountryEntity, isFavourite: Bool) {
 		self.country = country
+		self.isFavourite = isFavourite
 		sections.append(Section(title: "Basic", cellViewModels: [
 			BaseCountryInfoViewModelImpl(property: "Capital", value: country.capital),
 			BaseCountryInfoViewModelImpl(property: "Region", value: country.region),
@@ -47,5 +55,22 @@ final class CountryViewModelImpl: ViewModel {
 										[MapCellViewModelImpl(latitude: latitude, longitude: longitude)]))
 		}
 		self.stateHandler?(.dataLoaded)
+	}
+	
+	func process(action: Action) {
+		switch action {
+			case .changeFavourite:
+				self.updateFavourite()
+		}
+	}
+	
+	private func updateFavourite() {
+		self.isFavourite.toggle()
+		if self.isFavourite == true {
+			self.favouriteCountryService.addCountryToFavourite(countryCode: country.countryCode)
+		} else {
+			self.favouriteCountryService.removeFavouriteCountry(countryCode: country.countryCode)
+		}
+		stateHandler?(.isFavouriteUpdated)
 	}
 }

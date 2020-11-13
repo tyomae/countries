@@ -6,11 +6,6 @@
 //
 
 import Foundation
-
-//var code: String
-//var name: String
-//var symbol: String
-
 import RealmSwift
 
 class CurrencyEntity: Object {
@@ -23,5 +18,9 @@ class CurrencyEntity: Object {
 		self.code = code
 		self.name = name
 		self.symbol = symbol
+	}
+	
+	override class func primaryKey() -> String? {
+		"code"
 	}
 }

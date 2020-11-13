@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryViewController" customModule="CountriesApp" customModuleProvider="target">
             <connections>
                 <outlet property="countryNameLabel" destination="ACB-bE-Rwa" id="wVx-A5-jgY"/>
+                <outlet property="favouriteCountryButton" destination="aU9-iQ-iIv" id="oHX-6J-eTc"/>
                 <outlet property="flagEmojiLabel" destination="BM7-p5-0wn" id="ua4-DE-XEs"/>
                 <outlet property="tableView" destination="5ka-9d-Iqo" id="GGs-tE-xXl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -18,36 +20,49 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5ka-9d-Iqo">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     <view key="tableHeaderView" contentMode="scaleToFill" id="xFo-KF-0BY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-bE-Rwa">
-                                <rect key="frame" x="137.5" y="179.5" width="139.5" height="45.5"/>
+                                <rect key="frame" x="90.5" y="179.5" width="139" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="0.72233518835616439" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Flag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM7-p5-0wn">
-                                <rect key="frame" x="73.5" y="0.0" width="267.5" height="179.5"/>
+                                <rect key="frame" x="26.5" y="0.0" width="267" height="179.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU9-iQ-iIv">
+                                <rect key="frame" x="246" y="8" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aU9-iQ-iIv" secondAttribute="height" multiplier="1:1" id="jX4-2i-cAO"/>
+                                    <constraint firstAttribute="width" constant="44" id="pHB-Zr-38C"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <state key="normal" image="starUnpressed"/>
+                                <connections>
+                                    <action selector="addFavoutireCountryButtonPressed:" destination="-1" eventType="touchUpInside" id="Av1-Io-L6O"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.9491166472" green="0.94880193469999996" blue="0.96863096950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ACB-bE-Rwa" firstAttribute="top" secondItem="BM7-p5-0wn" secondAttribute="bottom" id="68y-Mw-f66"/>
                             <constraint firstItem="ACB-bE-Rwa" firstAttribute="centerX" secondItem="xFo-KF-0BY" secondAttribute="centerX" id="A5C-BR-ODx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aU9-iQ-iIv" secondAttribute="trailing" constant="22" id="CQO-E3-5oT"/>
                             <constraint firstAttribute="bottom" secondItem="ACB-bE-Rwa" secondAttribute="bottom" id="Xe8-3c-tgb"/>
                             <constraint firstItem="BM7-p5-0wn" firstAttribute="top" secondItem="xFo-KF-0BY" secondAttribute="top" id="YqK-vs-d5z"/>
                             <constraint firstItem="BM7-p5-0wn" firstAttribute="centerX" secondItem="xFo-KF-0BY" secondAttribute="centerX" id="cv9-0u-3nb"/>
+                            <constraint firstItem="aU9-iQ-iIv" firstAttribute="top" secondItem="xFo-KF-0BY" secondAttribute="topMargin" id="hrC-1A-kEc"/>
                         </constraints>
                     </view>
                 </tableView>
@@ -63,4 +78,10 @@
             <point key="canvasLocation" x="-184.05797101449278" y="75.669642857142847"/>
         </view>
     </objects>
+    <resources>
+        <image name="starUnpressed" width="64" height="64"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

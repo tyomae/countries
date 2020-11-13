@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE284D19255E99E1008BB1D7 /* FavouriteCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE284D18255E99E1008BB1D7 /* FavouriteCountryService.swift */; };
 		EE468CD525501AB0007A7941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CD425501AB0007A7941 /* AppDelegate.swift */; };
 		EE468CD725501AB0007A7941 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CD625501AB0007A7941 /* SceneDelegate.swift */; };
 		EE468CD925501AB0007A7941 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CD825501AB0007A7941 /* CountriesListViewController.swift */; };
 		EE468CDC25501AB0007A7941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE468CDA25501AB0007A7941 /* Main.storyboard */; };
-		EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE468CDD25501AB3007A7941 /* Assets.xcassets */; };
 		EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE468CDF25501AB3007A7941 /* LaunchScreen.storyboard */; };
 		EE468CFB25502ED0007A7941 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CFA25502ED0007A7941 /* BaseViewController.swift */; };
 		EE468CFE25503069007A7941 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE468CFD25503069007A7941 /* ViewModel.swift */; };
@@ -55,6 +55,8 @@
 		EE86D61F255C0CC20028CF12 /* CurrencyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86D61E255C0CC20028CF12 /* CurrencyEntity.swift */; };
 		EE86D62B255C55580028CF12 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86D629255C55580028CF12 /* NetworkClient.swift */; };
 		EE86D62C255C55580028CF12 /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86D62A255C55580028CF12 /* BaseNetworkService.swift */; };
+		EE86D63E255E8EDB0028CF12 /* FavouriteCountryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86D63D255E8EDB0028CF12 /* FavouriteCountryEntity.swift */; };
+		EE86D642255E93550028CF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE86D641255E93540028CF12 /* Assets.xcassets */; };
 		F4F9E835174EC7F2120213DF /* Pods_CountriesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4339F762C6A568F54758A874 /* Pods_CountriesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,12 +64,12 @@
 		2673AF2BB17F0108B088EC30 /* Pods-CountriesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesApp.debug.xcconfig"; path = "Target Support Files/Pods-CountriesApp/Pods-CountriesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4339F762C6A568F54758A874 /* Pods_CountriesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D46B4B5BCFD947AF91B176 /* Pods-CountriesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesApp.release.xcconfig"; path = "Target Support Files/Pods-CountriesApp/Pods-CountriesApp.release.xcconfig"; sourceTree = "<group>"; };
+		EE284D18255E99E1008BB1D7 /* FavouriteCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCountryService.swift; sourceTree = "<group>"; };
 		EE468CD125501AB0007A7941 /* CountriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE468CD425501AB0007A7941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE468CD625501AB0007A7941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE468CD825501AB0007A7941 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		EE468CDB25501AB0007A7941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EE468CDD25501AB3007A7941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE468CE025501AB3007A7941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE468CE225501AB3007A7941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE468CFA25502ED0007A7941 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,8 @@
 		EE86D61E255C0CC20028CF12 /* CurrencyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyEntity.swift; sourceTree = "<group>"; };
 		EE86D629255C55580028CF12 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EE86D62A255C55580028CF12 /* BaseNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
+		EE86D63D255E8EDB0028CF12 /* FavouriteCountryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCountryEntity.swift; sourceTree = "<group>"; };
+		EE86D641255E93540028CF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,10 +159,10 @@
 		EE468CD325501AB0007A7941 /* CountriesApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE86D5FB255BE1750028CF12 /* FavouriteCountriesviewController */,
 				EE5F49F7255A96780040BB9A /* CountriesResultsViewController */,
 				EE468D1D25504133007A7941 /* CountriesListViewController */,
 				EE468DA425544C8E007A7941 /* CountryViewController */,
+				EE86D5FB255BE1750028CF12 /* FavouriteCountriesviewController */,
 				EE468D8425519645007A7941 /* Services */,
 				EE468D86255196EC007A7941 /* Models */,
 				EE468CF525502E7F007A7941 /* Helpers */,
@@ -246,10 +250,10 @@
 		EE468D8125519367007A7941 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				EE86D641255E93540028CF12 /* Assets.xcassets */,
 				EE468CD425501AB0007A7941 /* AppDelegate.swift */,
 				EE468CD625501AB0007A7941 /* SceneDelegate.swift */,
 				EE468CDA25501AB0007A7941 /* Main.storyboard */,
-				EE468CDD25501AB3007A7941 /* Assets.xcassets */,
 				EE468CDF25501AB3007A7941 /* LaunchScreen.storyboard */,
 				EE468CE225501AB3007A7941 /* Info.plist */,
 			);
@@ -259,6 +263,7 @@
 		EE468D8425519645007A7941 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EE284D18255E99E1008BB1D7 /* FavouriteCountryService.swift */,
 				EE468D91255197A2007A7941 /* CountryService.swift */,
 				EE86D628255C55580028CF12 /* Network */,
 				EE86D608255C07890028CF12 /* Database */,
@@ -403,6 +408,7 @@
 				EE86D613255C08080028CF12 /* CountryEntity.swift */,
 				EE86D61A255C0BEF0028CF12 /* LocationEntity.swift */,
 				EE86D61E255C0CC20028CF12 /* CurrencyEntity.swift */,
+				EE86D63D255E8EDB0028CF12 /* FavouriteCountryEntity.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -488,8 +494,8 @@
 				EE5F49F5255A904A0040BB9A /* CountriesResultsViewController.xib in Resources */,
 				EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */,
 				EE86D601255BE1C30028CF12 /* FavouriteCountriesViewController.xib in Resources */,
+				EE86D642255E93550028CF12 /* Assets.xcassets in Resources */,
 				EE468DCD25545B15007A7941 /* CountryInfoTableViewCell.xib in Resources */,
-				EE468CDE25501AB3007A7941 /* Assets.xcassets in Resources */,
 				EE468CDC25501AB0007A7941 /* Main.storyboard in Resources */,
 				EE468DBD25545579007A7941 /* CountriesListViewController.xib in Resources */,
 				EE5F49EB2557F4400040BB9A /* MapTableViewCell.xib in Resources */,
@@ -580,6 +586,8 @@
 				EE468CFB25502ED0007A7941 /* BaseViewController.swift in Sources */,
 				EE86D60A255C07A80028CF12 /* RealmController.swift in Sources */,
 				EE468DA825544D59007A7941 /* CountryViewController.swift in Sources */,
+				EE284D19255E99E1008BB1D7 /* FavouriteCountryService.swift in Sources */,
+				EE86D63E255E8EDB0028CF12 /* FavouriteCountryEntity.swift in Sources */,
 				EE468CFE25503069007A7941 /* ViewModel.swift in Sources */,
 				EE468D7A255179FF007A7941 /* UITableView+registerCell.swift in Sources */,
 				EE86D62B255C55580028CF12 /* NetworkClient.swift in Sources */,

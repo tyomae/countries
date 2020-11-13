@@ -12,29 +12,26 @@ protocol CountryService {
 }
 
 class CountryServiceImpl: BaseNetworkService, CountryService {
-
-	private var savedCountries = Array(mainRealm.objects(CountryEntity.self))
-
+	
+	private var savedCountries = mainRealm.objects(CountryEntity.self)
+	
 	func getCountries(completion: @escaping((Result<[CountryEntity], APIError>) -> Void)) {
 		if savedCountries.isEmpty == false {
-			completion(Result.success(self.savedCountries))
+			completion(Result.success(Array(self.savedCountries)))
 		}
 		
 		request(method: .GET) { [weak self] (result: Result<[Country], APIError>) in
 			guard let self = self else { return }
 			switch result {
-				
 				case let .success(countries):
-			self.saveCountries(countries: countries)
-					
+					self.saveCountries(countries: countries)
 				case .failure(let error):
 					if self.savedCountries.isEmpty {
 						completion(Result.failure(error))
 						return
 					}
 			}
-			
-			completion(Result.success(self.savedCountries))
+			completion(Result.success(Array(self.savedCountries)))
 		}
 	}
 	

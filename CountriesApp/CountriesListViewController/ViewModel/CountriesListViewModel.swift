@@ -21,6 +21,7 @@ final class CountriesListViewModelImpl: ViewModel {
 	var stateHandler: ((State) -> Void)?
 	var sections = [Section]()
 	var countries = [CountryEntity]()
+	var favouritesCountryService = FavouriteCountryServiceImpl()
 	private var countriesDict = [String : [CountryEntity]]()
 	private var countryService = CountryServiceImpl()
 	
@@ -35,10 +36,9 @@ final class CountriesListViewModelImpl: ViewModel {
 				case let .success(countries):
 					self.countries = countries
 					self.generateSectionsDict()
-//					if countries.isEmpty == false {
-//						self.stateHandler?(.dataLoaded)
-//					}
-					self.stateHandler?(.dataLoaded)
+					if countries.isEmpty == false {
+						self.stateHandler?(.dataLoaded)
+					}
 				case let .failure(error):
 					//TODO: make error
 					print(error)
@@ -47,6 +47,8 @@ final class CountriesListViewModelImpl: ViewModel {
 	}
 	
 	private func generateSectionsDict() {
+		sections.removeAll()
+		countriesDict.removeAll()
 		for country in countries {
 			let firstCountryLetter = String(country.name.prefix(1))
 			if self.countriesDict[firstCountryLetter] != nil {
@@ -58,11 +60,12 @@ final class CountriesListViewModelImpl: ViewModel {
 		let keys = self.countriesDict.keys.sorted()
 		for key in keys {
 			if let countries = self.countriesDict[key] {
-				var countryViewModels = [CellViewModel]()
+				var countryViewModels = [CountryCellViewModelImpl]()
 				for country in countries {
 					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
 					countryViewModels.append(countryViewModel)
 				}
+				countryViewModels = self.sortCellViewModels(countryViewModels: countryViewModels)
 				sections.append(Section(title: key, cellViewModels: countryViewModels))
 			}
 		}
@@ -72,5 +75,13 @@ final class CountriesListViewModelImpl: ViewModel {
 		let keyByIndexPath = self.countriesDict.keys.sorted()[indexPath.section]
 		let countriesByKey = countriesDict[keyByIndexPath]
 		return countriesByKey?[indexPath.row]
+	}
+	
+	private func sortCellViewModels(countryViewModels: [CountryCellViewModelImpl]) -> [CountryCellViewModelImpl] {
+		countryViewModels.sorted { (country1, country2) -> Bool in
+			let countryName1 = country1.countryName
+			let countryName2 = country2.countryName
+			return (countryName1.localizedCaseInsensitiveCompare(countryName2) == .orderedAscending)
+		}
 	}
 }
