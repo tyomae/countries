@@ -10,13 +10,13 @@ import Foundation
 final class FavouriteCountriesViewModel: ViewModel {
 	
 	var stateHandler: ((State) -> Void)?
-	//TODO: отсортировать по дате добавления 
 	var favouritesCountries = [CountryEntity]()
 	var cellViewModels = [CountryCellViewModel]()
-	private var favouriteCountryService = FavouriteCountryServiceImpl()
+	var favouriteCountryService = FavouriteCountryServiceImpl()
 	
 	enum State {
 		case dataUpdated
+		case emptyList
 	}
 	
 	enum Action {
@@ -25,9 +25,11 @@ final class FavouriteCountriesViewModel: ViewModel {
 	
 	init() {
 		self.updateCellViewModels()
+		self.stateHandler?(.emptyList)
 		self.favouriteCountryService.addListener { [weak self] in
 			self?.updateCellViewModels()
 			self?.stateHandler?(.dataUpdated)
+			self?.stateHandler?(.emptyList)
 		}
 	}
 	

@@ -5,8 +5,6 @@
 //  Created by Артем Емельянов  on 05.11.2020.
 //
 
-//TODO: change star icon
-
 import UIKit
 
 class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableViewDataSource, UITableViewDelegate {
@@ -45,7 +43,8 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 	}
 	
 	@IBAction func addFavoutireCountryButtonPressed(_ sender: UIButton) {
-		viewModel.process(action: .changeFavourite)
+		self.viewModel.process(action: .changeFavourite)
+		self.changeButtonSize()
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,6 +79,16 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 		} else if viewModel.isFavourite == false {
 			self.favouriteCountryButton.setImage(#imageLiteral(resourceName: "starUnpressed"), for: .normal)
 		}
+	}
+	
+	private func changeButtonSize() {
+		UIView.animate(withDuration: 0.15, delay: 0.0, options: [.curveEaseOut], animations: {
+			self.favouriteCountryButton.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+		}, completion: { _ in
+			UIView.animate(withDuration: 0.15, delay: 0.0, options: [.curveEaseOut], animations: {
+				self.favouriteCountryButton.transform = .identity
+			})
+		})
 	}
 }
 

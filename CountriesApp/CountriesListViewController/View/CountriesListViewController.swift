@@ -14,6 +14,18 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
 			tableView.registerNib(for: CountryTableViewCell.self)
+			tableView.sectionIndexColor = UIColor.systemIndigo
+		}
+	}
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var errorLabel: UILabel!
+	@IBOutlet weak var retryButton: UIButton! {
+		didSet {
+			retryButton.setTitle("Retry", for: .normal)
+			retryButton.setTitleColor(.systemIndigo, for: .normal)
+			retryButton.layer.cornerRadius = 8
+			retryButton.layer.borderWidth = 1
+			retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
 		}
 	}
 	
@@ -34,12 +46,29 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		switch state {
 			case .dataLoaded:
 				self.setupSearchBar()
+				self.activityIndicator.stopAnimating()
+				self.activityIndicator.isHidden = true
+				self.retryButton.isHidden = true
+				self.errorLabel.isHidden = true
+				self.tableView.isHidden = false
 				self.tableView.reloadData()
+			case .loading:
+				self.activityIndicator.startAnimating()
+				self.activityIndicator.isHidden = false
+				self.errorLabel.text = "Loading countries..."
+				self.retryButton.isHidden = true
+				self.tableView.isHidden = true
+			case .error(let error):
+				self.activityIndicator.stopAnimating()
+				self.activityIndicator.isHidden = true
+				self.retryButton.isHidden = false
+				self.errorLabel.text = error
+				self.tableView.isHidden = true
 		}
 	}
 	
-	override var hidesKeyboardAfterTapOnRootView: Bool {
-		true
+	@IBAction func retryButtonToched(_ sender: Any) {
+		self.viewModel.getCountries()
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -82,16 +111,18 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		searchController = UISearchController(searchResultsController: countriesResultsVC)
 		searchController.searchResultsUpdater = countriesResultsVC
 		searchController.searchBar.placeholder = "Search countries"
+		searchController.searchBar.tintColor = .systemIndigo
 		searchController.obscuresBackgroundDuringPresentation = false
 		navigationItem.hidesSearchBarWhenScrolling = false
 		navigationItem.searchController = searchController
+		
+		navigationItem.backBarButtonItem?.tintColor = UIColor.systemIndigo
 		
 		definesPresentationContext = true
 	}
 	
 	private func openCountryVC(with country: CountryEntity) {
 		let vc = CountryViewController()
-		//TODO: Update isFavourite
 		let isFavourite = viewModel.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
 		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel

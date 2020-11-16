@@ -10,10 +10,12 @@ import RealmSwift
 
 class FavouriteCountryEntity: Object {
 	@objc dynamic var countryId: String = ""
-
+	@objc dynamic var addingDate = Date()
+	
 	convenience init(countryCode: String) {
 		self.init()
 		self.countryId = countryCode
+		self.addingDate = Date()
 	}
 	
 	override class func primaryKey() -> String? {

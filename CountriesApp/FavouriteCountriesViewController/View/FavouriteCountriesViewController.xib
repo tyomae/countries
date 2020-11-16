@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteCountriesViewController" customModule="CountriesApp" customModuleProvider="target">
             <connections>
+                <outlet property="emptyListLabel" destination="tgO-Pf-DgY" id="uNo-qn-g1W"/>
                 <outlet property="tableView" destination="Lw6-bl-2uf" id="Wj3-t1-pgj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="JRW-1J-j2Q"/>
             </connections>
@@ -24,12 +25,20 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMPTY LIST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgO-Pf-DgY">
+                    <rect key="frame" x="141.5" y="440" width="131.5" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="tgO-Pf-DgY" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="4T6-73-koF"/>
                 <constraint firstItem="Lw6-bl-2uf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Tgm-Gs-WHm"/>
                 <constraint firstItem="Lw6-bl-2uf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VCe-Aa-Y44"/>
+                <constraint firstItem="tgO-Pf-DgY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wJA-4P-929"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Lw6-bl-2uf" secondAttribute="bottom" id="x0n-9c-38p"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lw6-bl-2uf" secondAttribute="trailing" id="zUI-UX-WkX"/>
             </constraints>

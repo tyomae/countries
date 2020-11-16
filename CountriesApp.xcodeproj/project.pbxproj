@@ -162,9 +162,8 @@
 				EE5F49F7255A96780040BB9A /* CountriesResultsViewController */,
 				EE468D1D25504133007A7941 /* CountriesListViewController */,
 				EE468DA425544C8E007A7941 /* CountryViewController */,
-				EE86D5FB255BE1750028CF12 /* FavouriteCountriesviewController */,
+				EE86D5FB255BE1750028CF12 /* FavouriteCountriesViewController */,
 				EE468D8425519645007A7941 /* Services */,
-				EE468D86255196EC007A7941 /* Models */,
 				EE468CF525502E7F007A7941 /* Helpers */,
 				EE468D132550397E007A7941 /* Extensions */,
 				EE468D8125519367007A7941 /* Support */,
@@ -365,13 +364,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		EE86D5FB255BE1750028CF12 /* FavouriteCountriesviewController */ = {
+		EE86D5FB255BE1750028CF12 /* FavouriteCountriesViewController */ = {
 			isa = PBXGroup;
 			children = (
 				EE86D5FC255BE1880028CF12 /* View */,
 				EE86D5FD255BE1910028CF12 /* ViewModel */,
 			);
-			path = FavouriteCountriesviewController;
+			path = FavouriteCountriesViewController;
 			sourceTree = "<group>";
 		};
 		EE86D5FC255BE1880028CF12 /* View */ = {
@@ -416,6 +415,7 @@
 		EE86D628255C55580028CF12 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EE468D86255196EC007A7941 /* Models */,
 				EE86D629255C55580028CF12 /* NetworkClient.swift */,
 				EE86D62A255C55580028CF12 /* BaseNetworkService.swift */,
 			);

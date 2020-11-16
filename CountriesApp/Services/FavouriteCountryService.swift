@@ -50,7 +50,10 @@ class FavouriteCountryServiceImpl: FavouriteCountryService {
 	
 	func getFavouriteCountries() -> [CountryEntity] {
 		var favouritesCountries = [CountryEntity]()
-		for countryCode in Array(savedCountriesCode) {
+		let sortedCountriesCode = Array(savedCountriesCode).sorted { (savedCode1, savedCode2) -> Bool in
+			return savedCode1.addingDate < savedCode2.addingDate
+		}
+		for countryCode in sortedCountriesCode {
 			if let countryByCode = mainRealm.object(ofType: CountryEntity.self, forPrimaryKey: countryCode.countryId) {
 				favouritesCountries.append(countryByCode)
 			}

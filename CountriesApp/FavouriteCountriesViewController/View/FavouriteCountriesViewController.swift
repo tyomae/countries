@@ -9,20 +9,20 @@ import UIKit
 
 class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesViewModel>, UITableViewDataSource, UITableViewDelegate {
 	var selectedCountry: ((CountryEntity) -> ())?
-	
+	@IBOutlet weak var emptyListLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
 			tableView.registerNib(for: CountryTableViewCell.self)
 		}
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		self.tableView.delegate = self
 		self.tableView.dataSource =  self
 		
-    }
+	}
 	
 	override func setupViewModel() {
 		self.viewModel = FavouriteCountriesViewModel()
@@ -31,7 +31,17 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	override func processViewModel(state: FavouriteCountriesViewModel.State) {
 		switch state {
 			case .dataUpdated:
-				self.tableView.reloadData()
+				UIView.animate(withDuration: 0.8) {
+					self.tableView.reloadData()
+				}
+			case .emptyList:
+				if viewModel.favouritesCountries.isEmpty {
+					self.emptyListLabel.isHidden = false
+					self.tableView.isHidden = true
+				} else {
+					self.emptyListLabel.isHidden = true
+					self.tableView.isHidden = false
+				}
 		}
 	}
 	
@@ -57,7 +67,8 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 		let contextItem = UIContextualAction(style: .destructive, title: "Delete") { _,_,_ in
 			self.viewModel.process(action: .deleteCountry(countryCode: country.countryCode))
 			self.viewModel.favouritesCountries.remove(at: indexPath.row)
-			tableView.deleteRows(at: [indexPath], with: .automatic)
+			self.tableView.deleteRows(at: [indexPath], with: .automatic)
+			
 		}
 		let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
 		
@@ -66,7 +77,8 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	
 	private func openCountryVC(with country: CountryEntity) {
 		let vc = CountryViewController()
-		let viewModel = CountryViewModelImpl(country: country, isFavourite: false)
+		let isFavourite = viewModel.favouriteCountryService.isFavouriteCountry(countryCode: country.countryCode)
+		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel
 		self.navigationController?.pushViewController(vc, animated: true)
 	}

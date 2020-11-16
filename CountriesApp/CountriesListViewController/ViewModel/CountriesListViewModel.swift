@@ -16,6 +16,8 @@ final class CountriesListViewModelImpl: ViewModel {
 	
 	enum State {
 		case dataLoaded
+		case error(errorString: String)
+		case loading
 	}
 	
 	var stateHandler: ((State) -> Void)?
@@ -29,19 +31,19 @@ final class CountriesListViewModelImpl: ViewModel {
 		self.getCountries()
 	}
 	
-	private func getCountries() {
-		countryService.getCountries { [weak self] in
+	 func getCountries() {
+		self.stateHandler?(.loading)
+		self.countryService.getCountries { [weak self] in
 			guard let self = self else { return }
 			switch $0 {
 				case let .success(countries):
-					self.countries = countries
+					self.countries = self.sortCountriesByAlphabet(countries: countries)
 					self.generateSectionsDict()
 					if countries.isEmpty == false {
 						self.stateHandler?(.dataLoaded)
 					}
 				case let .failure(error):
-					//TODO: make error
-					print(error)
+					self.stateHandler?(.error(errorString: error.stringError))
 			}
 		}
 	}
@@ -65,7 +67,6 @@ final class CountriesListViewModelImpl: ViewModel {
 					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
 					countryViewModels.append(countryViewModel)
 				}
-				countryViewModels = self.sortCellViewModels(countryViewModels: countryViewModels)
 				sections.append(Section(title: key, cellViewModels: countryViewModels))
 			}
 		}
@@ -77,10 +78,10 @@ final class CountriesListViewModelImpl: ViewModel {
 		return countriesByKey?[indexPath.row]
 	}
 	
-	private func sortCellViewModels(countryViewModels: [CountryCellViewModelImpl]) -> [CountryCellViewModelImpl] {
-		countryViewModels.sorted { (country1, country2) -> Bool in
-			let countryName1 = country1.countryName
-			let countryName2 = country2.countryName
+	private func sortCountriesByAlphabet(countries: [CountryEntity]) -> [CountryEntity] {
+		countries.sorted { (country1, country2) -> Bool in
+			let countryName1 = country1.name
+			let countryName2 = country2.name
 			return (countryName1.localizedCaseInsensitiveCompare(countryName2) == .orderedAscending)
 		}
 	}

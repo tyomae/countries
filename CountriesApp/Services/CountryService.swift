@@ -14,13 +14,14 @@ protocol CountryService {
 class CountryServiceImpl: BaseNetworkService, CountryService {
 	
 	private var savedCountries = mainRealm.objects(CountryEntity.self)
+	private var endPoint = "rest/v2/all"
 	
 	func getCountries(completion: @escaping((Result<[CountryEntity], APIError>) -> Void)) {
 		if savedCountries.isEmpty == false {
 			completion(Result.success(Array(self.savedCountries)))
 		}
 		
-		request(method: .GET) { [weak self] (result: Result<[Country], APIError>) in
+		request(endpoint: self.endPoint, method: .GET) { [weak self] (result: Result<[Country], APIError>) in
 			guard let self = self else { return }
 			switch result {
 				case let .success(countries):

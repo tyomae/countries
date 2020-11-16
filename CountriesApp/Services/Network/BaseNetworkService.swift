@@ -9,7 +9,7 @@ import Foundation
 
 class BaseNetworkService {
 	
-	let baseURL = "https://restcountries.eu/rest/v2/all"
+	let baseURL = "https://restcountries.eu/"
 	
 	enum Method: String {
 		case GET
@@ -23,9 +23,10 @@ class BaseNetworkService {
 			self.urlSession = URLSession(configuration: config)
 		}
 	
-	func request<T: Decodable>(method: Method,
+	func request<T: Decodable>(endpoint: String,
+							   method: Method,
 							   completion: @escaping((Result<T, APIError>) -> Void)) {
-		let path = baseURL
+		let path = "\(baseURL)\(endpoint)"
 		guard let url = URL(string: path)
 			else { completion(.failure(.internalError)); return }
 		
