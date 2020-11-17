@@ -3,7 +3,7 @@ Countries info App
 ## General info
 Countries search is the application for the iPhone that displays information about all countries in the world from [RestCountries](https://restcountries.eu). If you want to see detailed information about the country you are interested in - just select it.
 ## Demo
-![RPReplay_Final1605627227](https://user-images.githubusercontent.com/50327663/99410575-aed88c00-2903-11eb-89d3-d35b8cff8c1b.gif) __________________________ ![RPReplay_Final1605626953](https://user-images.githubusercontent.com/50327663/99410024-0b877700-2903-11eb-944f-4500fc82d0fe.gif)
+![RPReplay_Final1605627227](https://user-images.githubusercontent.com/50327663/99410575-aed88c00-2903-11eb-89d3-d35b8cff8c1b.gif) ![RPReplay_Final1605626953](https://user-images.githubusercontent.com/50327663/99410024-0b877700-2903-11eb-944f-4500fc82d0fe.gif)
 
 
 
