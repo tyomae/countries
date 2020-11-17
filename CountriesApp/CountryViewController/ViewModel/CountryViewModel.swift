@@ -32,6 +32,7 @@ final class CountryViewModelImpl: ViewModel {
 	init(country: CountryEntity, isFavourite: Bool) {
 		self.country = country
 		self.isFavourite = isFavourite
+		
 		sections.append(Section(title: "Basic", cellViewModels: [
 			BaseCountryInfoViewModelImpl(property: "Capital", value: country.capital),
 			BaseCountryInfoViewModelImpl(property: "Region", value: country.region),

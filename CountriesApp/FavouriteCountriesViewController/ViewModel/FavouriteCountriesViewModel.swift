@@ -44,7 +44,7 @@ final class FavouriteCountriesViewModel: ViewModel {
 		self.favouritesCountries = favouriteCountryService.getFavouriteCountries()
 		self.cellViewModels.removeAll()
 		for country in favouritesCountries {
-			let cellViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
+			let cellViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode, isFavourite: false)
 			self.cellViewModels.append(cellViewModel)
 		}
 		self.stateHandler?(.dataUpdated)

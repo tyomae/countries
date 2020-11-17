@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="CountriesApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="451" height="97"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="CountryTableViewCell" customModule="CountriesApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="79"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="451" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="451" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPS-4i-fEv">
@@ -40,7 +40,7 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-d0-i34">
-                        <rect key="frame" x="92" y="21" width="343" height="42.5"/>
+                        <rect key="frame" x="92" y="21" width="309" height="42.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fto-3Y-fPr">
                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="25.5"/>
@@ -56,14 +56,24 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starPressed" translatesAutoresizingMaskIntoConstraints="NO" id="Ffl-CC-EBF">
+                        <rect key="frame" x="411" y="32" width="16" height="16"/>
+                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Ffl-CC-EBF" secondAttribute="height" multiplier="1:1" id="Lbh-hF-jDB"/>
+                            <constraint firstAttribute="height" constant="16" id="wts-VA-rnB"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Ffl-CC-EBF" firstAttribute="centerY" secondItem="J20-IA-3J3" secondAttribute="centerY" constant="-2" id="2l4-de-5B1"/>
+                    <constraint firstItem="Ffl-CC-EBF" firstAttribute="leading" secondItem="GCB-d0-i34" secondAttribute="trailing" constant="10" id="Lmi-5O-MjI"/>
                     <constraint firstItem="JPS-4i-fEv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Os5-7B-IsA"/>
+                    <constraint firstAttribute="trailing" secondItem="Ffl-CC-EBF" secondAttribute="trailing" constant="24" id="bpt-w2-xcp"/>
                     <constraint firstItem="JPS-4i-fEv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="dGo-ZV-qLL"/>
                     <constraint firstItem="GCB-d0-i34" firstAttribute="leading" secondItem="J20-IA-3J3" secondAttribute="trailing" constant="20" id="kHE-lt-oTT"/>
                     <constraint firstAttribute="bottom" secondItem="JPS-4i-fEv" secondAttribute="bottom" constant="16" id="mR0-Vz-UoT"/>
                     <constraint firstItem="GCB-d0-i34" firstAttribute="centerY" secondItem="J20-IA-3J3" secondAttribute="centerY" id="rJu-D3-yE7"/>
-                    <constraint firstAttribute="trailing" secondItem="GCB-d0-i34" secondAttribute="trailing" constant="16" id="wap-W7-w15"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -71,18 +81,23 @@
             <connections>
                 <outlet property="countryNameLabel" destination="fto-3Y-fPr" id="JdQ-B0-BHm"/>
                 <outlet property="flagLabel" destination="J20-IA-3J3" id="FRO-3r-Mpn"/>
+                <outlet property="isFavouriteView" destination="Ffl-CC-EBF" id="ReW-WJ-4FX"/>
                 <outlet property="ovalView" destination="JPS-4i-fEv" id="4XC-a4-kfD"/>
                 <outlet property="regionLabel" destination="kL0-5P-WAJ" id="r3h-1w-zak"/>
             </connections>
-            <point key="canvasLocation" x="232.60869565217394" y="121.54017857142857"/>
+            <point key="canvasLocation" x="232.60869565217394" y="115.51339285714285"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="starPressed" width="511" height="511"/>
         <namedColor name="flagView">
             <color red="0.92900002002716064" green="0.92900002002716064" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

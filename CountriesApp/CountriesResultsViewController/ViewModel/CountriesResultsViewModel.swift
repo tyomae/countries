@@ -12,6 +12,7 @@ final class CountriesResultsViewModelImpl: ViewModel {
 	var stateHandler: ((State) -> Void)?
 	var filteredCountries = [CountryEntity]()
 	var cellViewModels = [CountryCellViewModel]()
+	private var favouritesCountryService = FavouriteCountryServiceImpl()
 	private var countries = [CountryEntity]()
 	
 	enum State {
@@ -30,7 +31,8 @@ final class CountriesResultsViewModelImpl: ViewModel {
 	private func updateCellViewModels() {
 		self.cellViewModels.removeAll()
 		for country in filteredCountries {
-			let cellViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
+			let isFavourite = favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
+			let cellViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode, isFavourite: isFavourite)
 			self.cellViewModels.append(cellViewModel)
 		}
 		self.stateHandler?(.dataUpdated)

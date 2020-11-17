@@ -101,6 +101,25 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		self.openCountryVC(with: currentCountry)
 	}
 	
+	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		
+		if let currentCountry = self.viewModel.getCountrybyIndexPath(indexPath: indexPath) {
+			let contextItem: UIContextualAction
+			if self.viewModel.favouritesCountryService.isFavouriteCountry(countryCode: currentCountry.countryCode) ==  true {
+				contextItem = UIContextualAction(style: .normal, title: "Delete from Favourites") { _,_,_ in
+					self.viewModel.process(action: .deleteCountry(countryCode: currentCountry.countryCode))
+				}
+			} else {
+				contextItem = UIContextualAction(style: .normal, title: "Add to Favourites") { _,_,_ in
+					self.viewModel.process(action: .addCountry(countryCode: currentCountry.countryCode))
+				}
+			}
+			let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+			return swipeActions
+		}
+		return UISwipeActionsConfiguration()
+	}
+	
 	private func setupSearchBar() {
 		let countriesResultsVC = CountriesResultsViewController()
 		let viewModel = CountriesResultsViewModelImpl(countries: self.viewModel.countries)

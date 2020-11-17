@@ -20,6 +20,11 @@ final class CountriesListViewModelImpl: ViewModel {
 		case loading
 	}
 	
+	enum Action {
+		case addCountry(countryCode: String)
+		case deleteCountry(countryCode: String)
+	}
+	
 	var stateHandler: ((State) -> Void)?
 	var sections = [Section]()
 	var countries = [CountryEntity]()
@@ -29,9 +34,22 @@ final class CountriesListViewModelImpl: ViewModel {
 	
 	init() {
 		self.getCountries()
+		self.favouritesCountryService.addListener { [weak self] in
+			self?.getCountries()
+			self?.stateHandler?(.dataLoaded)
+		}
 	}
 	
-	 func getCountries() {
+	func process(action: Action) {
+		switch action {
+			case .deleteCountry(let countryCode):
+				self.favouritesCountryService.removeFavouriteCountry(countryCode: countryCode)
+			case .addCountry(let countryCode):
+				self.favouritesCountryService.addCountryToFavourite(countryCode: countryCode)
+		}
+	}
+	
+	func getCountries() {
 		self.stateHandler?(.loading)
 		self.countryService.getCountries { [weak self] in
 			guard let self = self else { return }
@@ -64,7 +82,8 @@ final class CountriesListViewModelImpl: ViewModel {
 			if let countries = self.countriesDict[key] {
 				var countryViewModels = [CountryCellViewModelImpl]()
 				for country in countries {
-					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode)
+					let isFavourite = favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
+					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode, isFavourite: isFavourite)
 					countryViewModels.append(countryViewModel)
 				}
 				sections.append(Section(title: key, cellViewModels: countryViewModels))
