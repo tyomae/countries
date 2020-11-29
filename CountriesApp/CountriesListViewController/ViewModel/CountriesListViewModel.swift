@@ -99,9 +99,7 @@ final class CountriesListViewModelImpl: ViewModel {
 	
 	private func sortCountriesByAlphabet(countries: [CountryEntity]) -> [CountryEntity] {
 		countries.sorted { (country1, country2) -> Bool in
-			let countryName1 = country1.name
-			let countryName2 = country2.name
-			return (countryName1.localizedCaseInsensitiveCompare(countryName2) == .orderedAscending)
+			return (country1.name.localizedCaseInsensitiveCompare(country2.name) == .orderedAscending)
 		}
 	}
 }

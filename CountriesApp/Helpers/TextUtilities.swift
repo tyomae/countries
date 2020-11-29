@@ -10,10 +10,10 @@ import Foundation
 struct TextUtilities {
 	 static func emojiFlag(from code: String) -> String {
 		let base : UInt32 = 127397
-		var s = ""
-		for v in code.unicodeScalars {
-			s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
+		var string = ""
+		for emojiCode in code.unicodeScalars {
+			string.unicodeScalars.append(UnicodeScalar(base + emojiCode.value)!)
 		}
-		return String(s)
+		return String(string)
 	}
 }

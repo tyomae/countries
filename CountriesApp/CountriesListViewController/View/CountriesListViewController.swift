@@ -22,7 +22,6 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	@IBOutlet weak var retryButton: UIButton! {
 		didSet {
 			retryButton.setTitle("Retry", for: .normal)
-			retryButton.setTitleColor(.systemIndigo, for: .normal)
 			retryButton.layer.cornerRadius = 8
 			retryButton.layer.borderWidth = 1
 			retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
@@ -47,22 +46,24 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 			case .dataLoaded:
 				self.setupSearchBar()
 				self.activityIndicator.stopAnimating()
-				self.activityIndicator.isHidden = true
+				self.activityIndicator.hidesWhenStopped = true
 				self.retryButton.isHidden = true
 				self.errorLabel.isHidden = true
 				self.tableView.isHidden = false
 				self.tableView.reloadData()
 			case .loading:
 				self.activityIndicator.startAnimating()
-				self.activityIndicator.isHidden = false
+				self.retryButton.isHidden = false
 				self.errorLabel.text = "Loading countries..."
+				self.errorLabel.isHidden = false
 				self.retryButton.isHidden = true
 				self.tableView.isHidden = true
 			case .error(let error):
 				self.activityIndicator.stopAnimating()
-				self.activityIndicator.isHidden = true
+				self.activityIndicator.hidesWhenStopped = true
 				self.retryButton.isHidden = false
 				self.errorLabel.text = error
+				self.errorLabel.isHidden = false
 				self.tableView.isHidden = true
 		}
 	}
@@ -117,7 +118,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 			let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
 			return swipeActions
 		}
-		return UISwipeActionsConfiguration()
+		return nil
 	}
 	
 	private func setupSearchBar() {
@@ -145,6 +146,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		let isFavourite = viewModel.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
 		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel
+		vc.hidesBottomBarWhenPushed =  true
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

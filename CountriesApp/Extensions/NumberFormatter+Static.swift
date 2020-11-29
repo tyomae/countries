@@ -11,7 +11,6 @@ extension NumberFormatter {
 	static var common: NumberFormatter = {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = .decimal
-		formatter.locale = Locale(identifier: "fr_FR")
 		formatter.maximumFractionDigits = 0
 		return formatter
 	}()

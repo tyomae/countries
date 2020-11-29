@@ -13,9 +13,9 @@ final class PopulationInfoCellViewModel: BaseCountryInfoCellViewModel, CellViewM
 
 	init(value: Int) {
 		if let stringScore = NumberFormatter.common.string(from: value as NSNumber) {
-			self.value = "\(stringScore) p"
+			self.value = stringScore
 		} else {
-			self.value = "\(value) p"
+			self.value = String(value)
 		}
 		self.property = "Population:"
 	}

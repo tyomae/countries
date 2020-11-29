@@ -8,7 +8,9 @@
 import UIKit
 
 class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesViewModel>, UITableViewDataSource, UITableViewDelegate {
+	
 	var selectedCountry: ((CountryEntity) -> ())?
+	
 	@IBOutlet weak var emptyListLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
@@ -35,13 +37,8 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 					self.tableView.reloadData()
 				}
 			case .emptyList:
-				if viewModel.favouritesCountries.isEmpty {
-					self.emptyListLabel.isHidden = false
-					self.tableView.isHidden = true
-				} else {
-					self.emptyListLabel.isHidden = true
-					self.tableView.isHidden = false
-				}
+				self.emptyListLabel.isHidden = !viewModel.favouritesCountries.isEmpty
+				self.tableView.isHidden = viewModel.favouritesCountries.isEmpty
 		}
 	}
 	
@@ -58,7 +55,7 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		openCountryVC(with: viewModel.favouritesCountries[indexPath.row])
+		openCountryVC(with: self.viewModel.favouritesCountries[indexPath.row])
 	}
 	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -68,10 +65,9 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 			self.viewModel.process(action: .deleteCountry(countryCode: country.countryCode))
 			self.viewModel.favouritesCountries.remove(at: indexPath.row)
 			self.tableView.deleteRows(at: [indexPath], with: .automatic)
-			
 		}
 		let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
-		
+
 		return swipeActions
 	}
 	
@@ -80,6 +76,7 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 		let isFavourite = viewModel.favouriteCountryService.isFavouriteCountry(countryCode: country.countryCode)
 		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel
+		vc.hidesBottomBarWhenPushed =  true
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

@@ -30,7 +30,7 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.countryNameLabel.text = viewModel.country.name
-		self.isCountryFavourite()
+		self.setFavouriteButtonIcon()
 	}
 	
 	override func processViewModel(state: CountryViewModelImpl.State) {
@@ -38,13 +38,13 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 			case .dataLoaded:
 				self.tableView.reloadData()
 			case .isFavouriteUpdated:
-				self.isCountryFavourite()
+				self.setFavouriteButtonIcon()
 		}
 	}
 	
 	@IBAction func addFavoutireCountryButtonPressed(_ sender: UIButton) {
 		self.viewModel.process(action: .changeFavourite)
-		self.changeButtonSize()
+		self.animateFavouriteCountryButton()
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,7 +73,7 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 		fatalError("Unknowned cellViewModel")
 	}
 	
-	private func isCountryFavourite() {
+	private func setFavouriteButtonIcon() {
 		if viewModel.isFavourite == true {
 			self.favouriteCountryButton.setImage(#imageLiteral(resourceName: "starPressed"), for: .normal)
 		} else if viewModel.isFavourite == false {
@@ -81,7 +81,7 @@ class CountryViewController: BaseViewController<CountryViewModelImpl>, UITableVi
 		}
 	}
 	
-	private func changeButtonSize() {
+	private func animateFavouriteCountryButton() {
 		UIView.animate(withDuration: 0.15, delay: 0.0, options: [.curveEaseOut], animations: {
 			self.favouriteCountryButton.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
 		}, completion: { _ in
