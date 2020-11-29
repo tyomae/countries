@@ -10,8 +10,8 @@ import UIKit
 class CountryTableViewCell: UITableViewCell, ConfigurableView {
 	@IBOutlet weak var ovalView: UIView! {
 		didSet {
-			ovalView.layer.cornerRadius = 26
-			ovalView.layer.masksToBounds = true
+			self.ovalView.layer.cornerRadius = 26
+			self.ovalView.layer.masksToBounds = true
 		}
 	}
 	@IBOutlet weak var countryNameLabel: UILabel!

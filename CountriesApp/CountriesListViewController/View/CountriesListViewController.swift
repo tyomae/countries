@@ -13,18 +13,18 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
-			tableView.registerNib(for: CountryTableViewCell.self)
-			tableView.sectionIndexColor = UIColor.systemIndigo
+			self.tableView.registerNib(for: CountryTableViewCell.self)
+			self.tableView.sectionIndexColor = UIColor.systemIndigo
 		}
 	}
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var retryButton: UIButton! {
 		didSet {
-			retryButton.setTitle("Retry", for: .normal)
-			retryButton.layer.cornerRadius = 8
-			retryButton.layer.borderWidth = 1
-			retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
+			self.retryButton.setTitle("Retry", for: .normal)
+			self.retryButton.layer.cornerRadius = 8
+			self.retryButton.layer.borderWidth = 1
+			self.retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
 		}
 	}
 	
@@ -46,7 +46,6 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 			case .dataLoaded:
 				self.setupSearchBar()
 				self.activityIndicator.stopAnimating()
-				self.activityIndicator.hidesWhenStopped = true
 				self.retryButton.isHidden = true
 				self.errorLabel.isHidden = true
 				self.tableView.isHidden = false
@@ -60,7 +59,6 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 				self.tableView.isHidden = true
 			case .error(let error):
 				self.activityIndicator.stopAnimating()
-				self.activityIndicator.hidesWhenStopped = true
 				self.retryButton.isHidden = false
 				self.errorLabel.text = error
 				self.errorLabel.isHidden = false
@@ -73,25 +71,25 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return viewModel.sections.count
+		return self.viewModel.sections.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.sections[section].cellViewModels.count
+		return self.viewModel.sections[section].cellViewModels.count
 	}
 	
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-		return viewModel.sections.map{ $0.title }
+		return self.viewModel.sections.map{ $0.title }
 	}
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return viewModel.sections[section].title
+		return self.viewModel.sections[section].title
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-		let cellViewModel = viewModel.sections[indexPath.section].cellViewModels[indexPath.row]
+		let cellViewModel = self.viewModel.sections[indexPath.section].cellViewModels[indexPath.row]
 		cell.configure(with: cellViewModel as! CountryCellViewModel)
 		return cell
 	}
@@ -128,22 +126,22 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		countriesResultsVC.selectedCountry = { [weak self] country in
 			self?.openCountryVC(with: country)
 		}
-		searchController = UISearchController(searchResultsController: countriesResultsVC)
-		searchController.searchResultsUpdater = countriesResultsVC
-		searchController.searchBar.placeholder = "Search countries"
-		searchController.searchBar.tintColor = .systemIndigo
-		searchController.obscuresBackgroundDuringPresentation = false
-		navigationItem.hidesSearchBarWhenScrolling = false
-		navigationItem.searchController = searchController
+		self.searchController = UISearchController(searchResultsController: countriesResultsVC)
+		self.searchController.searchResultsUpdater = countriesResultsVC
+		self.searchController.searchBar.placeholder = "Search countries"
+		self.searchController.searchBar.tintColor = .systemIndigo
+		self.searchController.obscuresBackgroundDuringPresentation = false
+		self.navigationItem.hidesSearchBarWhenScrolling = false
+		self.navigationItem.searchController = searchController
 		
-		navigationItem.backBarButtonItem?.tintColor = UIColor.systemIndigo
+		self.navigationItem.backBarButtonItem?.tintColor = UIColor.systemIndigo
 		
-		definesPresentationContext = true
+		self.definesPresentationContext = true
 	}
 	
 	private func openCountryVC(with country: CountryEntity) {
 		let vc = CountryViewController()
-		let isFavourite = viewModel.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
+		let isFavourite = self.viewModel.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
 		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel
 		vc.hidesBottomBarWhenPushed =  true

@@ -31,7 +31,7 @@ final class CountriesResultsViewModelImpl: ViewModel {
 	private func updateCellViewModels() {
 		self.cellViewModels.removeAll()
 		for country in filteredCountries {
-			let isFavourite = favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
+			let isFavourite = self.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
 			let cellViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode, isFavourite: isFavourite)
 			self.cellViewModels.append(cellViewModel)
 		}
@@ -39,7 +39,7 @@ final class CountriesResultsViewModelImpl: ViewModel {
 	}
 	
 	private func filterCountries(searchText: String) {
-		self.filteredCountries = countries.filter({ $0.name.lowercased().contains(searchText.lowercased()) })
+		self.filteredCountries = self.countries.filter({ $0.name.lowercased().contains(searchText.lowercased()) })
 		self.updateCellViewModels()
 	}
 	

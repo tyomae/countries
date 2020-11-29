@@ -14,7 +14,7 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	@IBOutlet weak var emptyListLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
-			tableView.registerNib(for: CountryTableViewCell.self)
+			self.tableView.registerNib(for: CountryTableViewCell.self)
 		}
 	}
 	
@@ -43,19 +43,19 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.favouritesCountries.count
+		return self.viewModel.favouritesCountries.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-		let cellViewModel = viewModel.cellViewModels[indexPath.row]
+		let cellViewModel = self.viewModel.cellViewModels[indexPath.row]
 		cell.configure(with: cellViewModel)
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		openCountryVC(with: self.viewModel.favouritesCountries[indexPath.row])
+		self.openCountryVC(with: self.viewModel.favouritesCountries[indexPath.row])
 	}
 	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -73,7 +73,7 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	
 	private func openCountryVC(with country: CountryEntity) {
 		let vc = CountryViewController()
-		let isFavourite = viewModel.favouriteCountryService.isFavouriteCountry(countryCode: country.countryCode)
+		let isFavourite = self.viewModel.favouriteCountryService.isFavouriteCountry(countryCode: country.countryCode)
 		let viewModel = CountryViewModelImpl(country: country, isFavourite: isFavourite)
 		vc.viewModel = viewModel
 		vc.hidesBottomBarWhenPushed =  true

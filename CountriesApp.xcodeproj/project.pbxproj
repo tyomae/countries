@@ -322,7 +322,7 @@
 				EE468DCF25545F5B007A7941 /* BaseCountryInfoCellViewModel.swift */,
 				EE468DD225546007007A7941 /* PopulationInfoCellViewModel.swift */,
 				EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */,
-				EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */,
+				EE86D5FC255BE1880028CF12 /* View */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -333,6 +333,7 @@
 				EE468DCA25545B15007A7941 /* CountryInfoTableViewCell.swift */,
 				EE468DCB25545B15007A7941 /* CountryInfoTableViewCell.xib */,
 				EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */,
+				EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */,
 				EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */,
 			);
 			path = View;
@@ -367,7 +368,6 @@
 		EE86D5FB255BE1750028CF12 /* FavouriteCountriesViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EE86D5FC255BE1880028CF12 /* View */,
 				EE86D5FD255BE1910028CF12 /* ViewModel */,
 			);
 			path = FavouriteCountriesViewController;

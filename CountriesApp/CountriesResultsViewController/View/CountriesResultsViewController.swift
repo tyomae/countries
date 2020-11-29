@@ -13,7 +13,7 @@ class CountriesResultsViewController: BaseViewController<CountriesResultsViewMod
 	
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
-			tableView.registerNib(for: CountryTableViewCell.self)
+			self.tableView.registerNib(for: CountryTableViewCell.self)
 		}
 	}
 	
@@ -32,22 +32,22 @@ class CountriesResultsViewController: BaseViewController<CountriesResultsViewMod
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.filteredCountries.count
+		return self.viewModel.filteredCountries.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: CountryTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-		let cellViewModel = viewModel.cellViewModels[indexPath.row]
+		let cellViewModel = self.viewModel.cellViewModels[indexPath.row]
 		cell.configure(with: cellViewModel)
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		selectedCountry?(viewModel.filteredCountries[indexPath.row])
+		self.selectedCountry?(self.viewModel.filteredCountries[indexPath.row])
 	}
 	
 	func updateSearchResults(for searchController: UISearchController) {
-		viewModel.process(action: .searchTextDidChanged(text: searchController.searchBar.text ?? ""))
+		self.viewModel.process(action: .searchTextDidChanged(text: searchController.searchBar.text ?? ""))
 	}
 }

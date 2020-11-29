@@ -67,8 +67,8 @@ final class CountriesListViewModelImpl: ViewModel {
 	}
 	
 	private func generateSectionsDict() {
-		sections.removeAll()
-		countriesDict.removeAll()
+		self.sections.removeAll()
+		self.countriesDict.removeAll()
 		for country in countries {
 			let firstCountryLetter = String(country.name.prefix(1))
 			if self.countriesDict[firstCountryLetter] != nil {
@@ -82,18 +82,21 @@ final class CountriesListViewModelImpl: ViewModel {
 			if let countries = self.countriesDict[key] {
 				var countryViewModels = [CountryCellViewModelImpl]()
 				for country in countries {
-					let isFavourite = favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
-					let countryViewModel = CountryCellViewModelImpl(countryName: country.name, regionName: country.region, countryCode: country.countryCode, isFavourite: isFavourite)
+					let isFavourite = self.favouritesCountryService.isFavouriteCountry(countryCode: country.countryCode)
+					let countryViewModel = CountryCellViewModelImpl(countryName: country.name,
+																	regionName: country.region,
+																	countryCode: country.countryCode,
+																	isFavourite: isFavourite)
 					countryViewModels.append(countryViewModel)
 				}
-				sections.append(Section(title: key, cellViewModels: countryViewModels))
+				self.sections.append(Section(title: key, cellViewModels: countryViewModels))
 			}
 		}
 	}
 	
 	func getCountrybyIndexPath(indexPath: IndexPath)-> CountryEntity? {
 		let keyByIndexPath = self.countriesDict.keys.sorted()[indexPath.section]
-		let countriesByKey = countriesDict[keyByIndexPath]
+		let countriesByKey = self.countriesDict[keyByIndexPath]
 		return countriesByKey?[indexPath.row]
 	}
 	

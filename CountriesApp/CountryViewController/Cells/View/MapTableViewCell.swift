@@ -18,20 +18,20 @@ class MapTableViewCell: UITableViewCell, MKMapViewDelegate, ConfigurableView {
 	
 	var coordinates: CLLocationCoordinate2D? {
 		didSet {
-			guard let coordinates = coordinates else { return }
+			guard let coordinates = self.coordinates else { return }
 			let hotelPosition = MKPointAnnotation()
 			hotelPosition.coordinate = coordinates
-			mapView.addAnnotation(hotelPosition)
-			mapView.centerCoordinate = coordinates
+			self.mapView.addAnnotation(hotelPosition)
+			self.mapView.centerCoordinate = coordinates
 			let viewRegion = MKCoordinateRegion(center: coordinates, latitudinalMeters: 1200000, longitudinalMeters: 1200000)
-			mapView.setRegion(viewRegion, animated: false)
+			self.mapView.setRegion(viewRegion, animated: false)
 		}
 	}
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
-		mapView.delegate = self
+		self.mapView.delegate = self
 	}
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

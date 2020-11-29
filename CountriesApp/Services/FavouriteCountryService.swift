@@ -23,14 +23,14 @@ class FavouriteCountryServiceImpl: FavouriteCountryService {
 	private var _handler: (() -> ())?
 	
 	func addListener(handler: @escaping (() -> Void)) {
-		_handler = handler
-		notificationToken = self.savedCountriesCode.observe { [weak self] _ in
+		self._handler = handler
+		self.notificationToken = self.savedCountriesCode.observe { [weak self] _ in
 			self?._handler?()
 		}
 	}
 	
 	deinit {
-		notificationToken?.invalidate()
+		self.notificationToken?.invalidate()
 	}
 	
 	func addCountryToFavourite(countryCode: String) {
@@ -50,7 +50,7 @@ class FavouriteCountryServiceImpl: FavouriteCountryService {
 	
 	func getFavouriteCountries() -> [CountryEntity] {
 		var favouritesCountries = [CountryEntity]()
-		let sortedCountriesCode = Array(savedCountriesCode).sorted { (savedCode1, savedCode2) -> Bool in
+		let sortedCountriesCode = Array(self.savedCountriesCode).sorted { (savedCode1, savedCode2) -> Bool in
 			return savedCode1.addingDate < savedCode2.addingDate
 		}
 		for countryCode in sortedCountriesCode {
@@ -62,7 +62,7 @@ class FavouriteCountryServiceImpl: FavouriteCountryService {
 	}
 	
 	func isFavouriteCountry(countryCode: String) -> Bool {
-		return savedCountriesCode.contains {
+		return self.savedCountriesCode.contains {
 			return $0.countryId == countryCode
 		}
 	}

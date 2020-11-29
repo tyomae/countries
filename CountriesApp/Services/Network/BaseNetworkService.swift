@@ -38,7 +38,7 @@ class BaseNetworkService {
 	
 	func call<T: Decodable>(with request: URLRequest,
 							completion: @escaping((Result<T, APIError>) -> Void)) {
-		let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
+		let dataTask = self.urlSession.dataTask(with: request) { (data, response, error) in
 			if let data = data, let object = try? JSONDecoder().decode(T.self, from: data) {
 				DispatchQueue.main.async {
 					completion(Result.success(object))
