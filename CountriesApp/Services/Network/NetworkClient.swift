@@ -13,11 +13,11 @@ enum APIError: Error {
 	var stringError: String {
 		switch self {
 		case.serverError:
-			return "Server error 😳"
+			return R.string.localizable.server_error()
 		case.noInternet:
-			return "No network access 😩"
+			return R.string.localizable.no_network_access()
 		case.internalError:
-			return "No network access 😩"
+			return R.string.localizable.no_network_access()
 		}
 	}
 }

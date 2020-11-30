@@ -33,26 +33,26 @@ final class CountryViewModelImpl: ViewModel {
 		self.country = country
 		self.isFavourite = isFavourite
 		
-		self.sections.append(Section(title: "Basic", cellViewModels: [
-			BaseCountryInfoViewModelImpl(property: "Capital", value: country.capital),
-			BaseCountryInfoViewModelImpl(property: "Region", value: country.region),
-			BaseCountryInfoViewModelImpl(property: "Subregion", value: country.subregion)
+		self.sections.append(Section(title: R.string.localizable.basic(), cellViewModels: [
+			BaseCountryInfoViewModelImpl(property: R.string.localizable.capital(), value: country.capital),
+			BaseCountryInfoViewModelImpl(property: R.string.localizable.region(), value: country.region),
+			BaseCountryInfoViewModelImpl(property: R.string.localizable.subregion(), value: country.subregion)
 		]))
-		self.sections.append(Section(title: "Numerical characteristics", cellViewModels: [
+		self.sections.append(Section(title: R.string.localizable.numerical_characteristics(), cellViewModels: [
 			AreaInfoCellViewModel(value: country.area),
 			PopulationInfoCellViewModel(value: country.population),
-			BaseCountryInfoViewModelImpl(property: "Timezone", value: country.timezone)
+			BaseCountryInfoViewModelImpl(property: R.string.localizable.timezone(), value: country.timezone)
 		]))
 		for (index, currency) in country.currencies.enumerated() {
-			let title = index == 0 ? "Currencies" : nil
+			let title = index == 0 ? R.string.localizable.currencies() : nil
 			self.sections.append(Section(title: title, cellViewModels: [
-				BaseCountryInfoViewModelImpl(property: "Code", value: currency.code),
-				BaseCountryInfoViewModelImpl(property: "Name", value: currency.name),
-				BaseCountryInfoViewModelImpl(property: "Symbol", value: currency.symbol)
+				BaseCountryInfoViewModelImpl(property: R.string.localizable.code(), value: currency.code),
+				BaseCountryInfoViewModelImpl(property: R.string.localizable.name(), value: currency.name),
+				BaseCountryInfoViewModelImpl(property: R.string.localizable.symbol(), value: currency.symbol)
 			]))
 		}
 		if let latitude = country.location?.latitude, let longitude = country.location?.longitude {
-			self.sections.append(Section(title: "Country location", cellViewModels:
+			self.sections.append(Section(title: R.string.localizable.country_location(), cellViewModels:
 										[MapCellViewModelImpl(latitude: latitude,
 															  longitude: longitude)]))
 		}

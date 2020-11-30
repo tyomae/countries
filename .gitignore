@@ -94,6 +94,14 @@ fastlane/test_output
 iOSInjectionProject/
 
 #R.swift
+*.generated.swift
 R.generated.swift
+
+rswift.xcarchive
+rswift.xcodeproj
+
+rswift.log
+rswift-tv.log
+rswift-watchos.log
 
 .DS_Store

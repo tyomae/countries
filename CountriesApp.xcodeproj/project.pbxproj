@@ -57,6 +57,8 @@
 		EE86D62C255C55580028CF12 /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86D62A255C55580028CF12 /* BaseNetworkService.swift */; };
 		EE86D63E255E8EDB0028CF12 /* FavouriteCountryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86D63D255E8EDB0028CF12 /* FavouriteCountryEntity.swift */; };
 		EE86D642255E93550028CF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE86D641255E93540028CF12 /* Assets.xcassets */; };
+		EEAA341825754598002DAD06 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA341725754598002DAD06 /* R.generated.swift */; };
+		EEAA341E25755079002DAD06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEAA342025755079002DAD06 /* Localizable.strings */; };
 		F4F9E835174EC7F2120213DF /* Pods_CountriesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4339F762C6A568F54758A874 /* Pods_CountriesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +118,9 @@
 		EE86D62A255C55580028CF12 /* BaseNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		EE86D63D255E8EDB0028CF12 /* FavouriteCountryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCountryEntity.swift; sourceTree = "<group>"; };
 		EE86D641255E93540028CF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEAA341725754598002DAD06 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		EEAA341F25755079002DAD06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EEAA342425755417002DAD06 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,7 @@
 				EE468CF525502E7F007A7941 /* Helpers */,
 				EE468D132550397E007A7941 /* Extensions */,
 				EE468D8125519367007A7941 /* Support */,
+				EEAA341725754598002DAD06 /* R.generated.swift */,
 			);
 			path = CountriesApp;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				EE468CDA25501AB0007A7941 /* Main.storyboard */,
 				EE468CDF25501AB3007A7941 /* LaunchScreen.storyboard */,
 				EE468CE225501AB3007A7941 /* Info.plist */,
+				EEAA342025755079002DAD06 /* Localizable.strings */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -319,10 +326,10 @@
 		EE468DB6255452A8007A7941 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */,
 				EE468DCF25545F5B007A7941 /* BaseCountryInfoCellViewModel.swift */,
 				EE468DD225546007007A7941 /* PopulationInfoCellViewModel.swift */,
 				EE468DD625546061007A7941 /* AreaInfoCellViewModel.swift */,
-				EE86D5FC255BE1880028CF12 /* View */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -333,7 +340,6 @@
 				EE468DCA25545B15007A7941 /* CountryInfoTableViewCell.swift */,
 				EE468DCB25545B15007A7941 /* CountryInfoTableViewCell.xib */,
 				EE5F49E82557F4400040BB9A /* MapTableViewCell.swift */,
-				EE5F49ED2557F5E80040BB9A /* MapCellViewModel.swift */,
 				EE5F49E92557F4400040BB9A /* MapTableViewCell.xib */,
 			);
 			path = View;
@@ -368,6 +374,7 @@
 		EE86D5FB255BE1750028CF12 /* FavouriteCountriesViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EE86D5FC255BE1880028CF12 /* View */,
 				EE86D5FD255BE1910028CF12 /* ViewModel */,
 			);
 			path = FavouriteCountriesViewController;
@@ -439,6 +446,7 @@
 			buildConfigurationList = EE468CE525501AB3007A7941 /* Build configuration list for PBXNativeTarget "CountriesApp" */;
 			buildPhases = (
 				4A0FBD51D6B3D8378A98C41C /* [CP] Check Pods Manifest.lock */,
+				EEC65A532574FF9F0035A160 /* R.swift */,
 				EE468CCD25501AB0007A7941 /* Sources */,
 				EE468CCE25501AB0007A7941 /* Frameworks */,
 				EE468CCF25501AB0007A7941 /* Resources */,
@@ -474,6 +482,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = EE468CC825501AB0007A7941;
 			productRefGroup = EE468CD225501AB0007A7941 /* Products */;
@@ -492,6 +501,7 @@
 			files = (
 				EE468D3225508424007A7941 /* CountryTableViewCell.xib in Resources */,
 				EE5F49F5255A904A0040BB9A /* CountriesResultsViewController.xib in Resources */,
+				EEAA341E25755079002DAD06 /* Localizable.strings in Resources */,
 				EE468CE125501AB3007A7941 /* LaunchScreen.storyboard in Resources */,
 				EE86D601255BE1C30028CF12 /* FavouriteCountriesViewController.xib in Resources */,
 				EE86D642255E93550028CF12 /* Assets.xcassets in Resources */,
@@ -545,6 +555,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountriesApp/Pods-CountriesApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EEC65A532574FF9F0035A160 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/$PRODUCT_NAME/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PRODUCT_NAME/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -552,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAA341825754598002DAD06 /* R.generated.swift in Sources */,
 				EE86D61B255C0BEF0028CF12 /* LocationEntity.swift in Sources */,
 				EE468D01255030D9007A7941 /* KeyboardNotification.swift in Sources */,
 				EE468CD925501AB0007A7941 /* CountriesListViewController.swift in Sources */,
@@ -614,6 +645,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		EEAA342025755079002DAD06 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEAA341F25755079002DAD06 /* en */,
+				EEAA342425755417002DAD06 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -621,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -682,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

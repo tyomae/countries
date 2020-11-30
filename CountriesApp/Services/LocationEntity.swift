@@ -9,7 +9,6 @@ import Foundation
 import RealmSwift
 
 class LocationEntity: Object {
-	
 	@objc dynamic var countryCode: String = ""
 	@objc dynamic var latitude: Double = 0
 	@objc dynamic var longitude: Double = 0

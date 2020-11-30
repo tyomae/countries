@@ -12,11 +12,11 @@ final class AreaInfoCellViewModel: BaseCountryInfoCellViewModel, CellViewModel {
 	let value: String
 
 	init(value: Double) {
-		self.property = "Area:"
+		self.property = R.string.localizable.area()
 		if let stringScore = NumberFormatter.common.string(from: value as NSNumber) {
-			self.value = "\(stringScore) km²"
+			self.value = "\(stringScore) " + R.string.localizable.km()
 		} else {
-			self.value = "\(value) km²"
+			self.value = "\(value) " + R.string.localizable.km()
 		}
 	}
 }

@@ -17,6 +17,6 @@ final class PopulationInfoCellViewModel: BaseCountryInfoCellViewModel, CellViewM
 		} else {
 			self.value = String(value)
 		}
-		self.property = "Population:"
+		self.property = R.string.localizable.population()
 	}
 }

@@ -11,7 +11,11 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	
 	var selectedCountry: ((CountryEntity) -> ())?
 	
-	@IBOutlet weak var emptyListLabel: UILabel!
+	@IBOutlet weak var emptyListLabel: UILabel! {
+		didSet {
+			self.emptyListLabel.text = R.string.localizable.empty_list()
+		}
+	}
 	@IBOutlet weak var tableView: UITableView! {
 		didSet {
 			self.tableView.registerNib(for: CountryTableViewCell.self)
@@ -21,9 +25,9 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.title = R.string.localizable.favourites_countries()
 		self.tableView.delegate = self
 		self.tableView.dataSource =  self
-		
 	}
 	
 	override func setupViewModel() {
@@ -61,7 +65,7 @@ class FavouriteCountriesViewController: BaseViewController<FavouriteCountriesVie
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let country = self.viewModel.favouritesCountries[indexPath.row]
 		
-		let contextItem = UIContextualAction(style: .destructive, title: "Delete") { _,_,_ in
+		let contextItem = UIContextualAction(style: .destructive, title: R.string.localizable.delete()) { _,_,_ in
 			self.viewModel.process(action: .deleteCountry(countryCode: country.countryCode))
 			self.viewModel.favouritesCountries.remove(at: indexPath.row)
 			self.tableView.deleteRows(at: [indexPath], with: .automatic)

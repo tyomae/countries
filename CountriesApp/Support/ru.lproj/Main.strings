@@ -1,0 +1,12 @@
+
+/* Class = "UITabBarItem"; title = "Countries"; ObjectID = "AT8-eM-bur"; */
+"AT8-eM-bur.title" = "Countries";
+
+/* Class = "UINavigationItem"; title = "Countries search"; ObjectID = "onN-dn-i4Q"; */
+"onN-dn-i4Q.title" = "Countries search";
+
+/* Class = "UIBarButtonItem"; title = "Countries"; ObjectID = "xb9-V6-co6"; */
+"xb9-V6-co6.title" = "Countries";
+
+/* Class = "UINavigationItem"; title = "Favourites countries"; ObjectID = "zI9-gS-U5r"; */
+"zI9-gS-U5r.title" = "Favourites countries";

@@ -21,7 +21,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	@IBOutlet weak var errorLabel: UILabel!
 	@IBOutlet weak var retryButton: UIButton! {
 		didSet {
-			self.retryButton.setTitle("Retry", for: .normal)
+			self.retryButton.setTitle(R.string.localizable.retry(), for: .normal)
 			self.retryButton.layer.cornerRadius = 8
 			self.retryButton.layer.borderWidth = 1
 			self.retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
@@ -31,9 +31,10 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.title = R.string.localizable.countries_search()
 		self.tableView.dataSource = self
 		self.tableView.delegate = self
-		
+	
 		self.setupSearchBar()
 	}
 	
@@ -53,7 +54,7 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 			case .loading:
 				self.activityIndicator.startAnimating()
 				self.retryButton.isHidden = false
-				self.errorLabel.text = "Loading countries..."
+				self.errorLabel.text = R.string.localizable.loading_countries()
 				self.errorLabel.isHidden = false
 				self.retryButton.isHidden = true
 				self.tableView.isHidden = true
@@ -105,11 +106,11 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		if let currentCountry = self.viewModel.getCountrybyIndexPath(indexPath: indexPath) {
 			let contextItem: UIContextualAction
 			if self.viewModel.favouritesCountryService.isFavouriteCountry(countryCode: currentCountry.countryCode) ==  true {
-				contextItem = UIContextualAction(style: .normal, title: "Delete from Favourites") { _,_,_ in
+				contextItem = UIContextualAction(style: .normal, title: R.string.localizable.delete_from_favourites()) { _,_,_ in
 					self.viewModel.process(action: .deleteCountry(countryCode: currentCountry.countryCode))
 				}
 			} else {
-				contextItem = UIContextualAction(style: .normal, title: "Add to Favourites") { _,_,_ in
+				contextItem = UIContextualAction(style: .normal, title: R.string.localizable.add_to_favourites()) { _,_,_ in
 					self.viewModel.process(action: .addCountry(countryCode: currentCountry.countryCode))
 				}
 			}
@@ -128,13 +129,12 @@ class CountriesListViewController: BaseViewController<CountriesListViewModelImpl
 		}
 		self.searchController = UISearchController(searchResultsController: countriesResultsVC)
 		self.searchController.searchResultsUpdater = countriesResultsVC
-		self.searchController.searchBar.placeholder = "Search countries"
+		self.searchController.searchBar.placeholder = R.string.localizable.search_countries()
 		self.searchController.searchBar.tintColor = .systemIndigo
 		self.searchController.obscuresBackgroundDuringPresentation = false
 		self.navigationItem.hidesSearchBarWhenScrolling = false
 		self.navigationItem.searchController = searchController
-		
-		self.navigationItem.backBarButtonItem?.tintColor = UIColor.systemIndigo
+		self.navigationItem.backBarButtonItem?.title = R.string.localizable.countries()
 		
 		self.definesPresentationContext = true
 	}

@@ -9,7 +9,6 @@ import Foundation
 import RealmSwift
 
 class CountryEntity: Object {
-
 	@objc dynamic var name: String = ""
 	@objc dynamic var capital: String = ""
 	@objc dynamic var region: String = ""

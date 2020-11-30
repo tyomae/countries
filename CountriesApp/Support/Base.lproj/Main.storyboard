@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favourites countries-->
+        <!--Favourite Countries View Controller-->
         <scene sceneID="3eo-1i-Tea">
             <objects>
                 <viewController id="ycT-Bj-AsE" customClass="FavouriteCountriesViewController" customModule="CountriesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Favourites countries" largeTitleDisplayMode="always" id="zI9-gS-U5r"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="zI9-gS-U5r"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sj1-vU-C31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,13 +34,11 @@
             </objects>
             <point key="canvasLocation" x="1855" y="-1001"/>
         </scene>
-        <!--Countries search-->
+        <!--Countries List View Controller-->
         <scene sceneID="tGE-C3-aEs">
             <objects>
                 <viewController id="9wf-ca-Js1" customClass="CountriesListViewController" customModule="CountriesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Countries search" largeTitleDisplayMode="always" id="onN-dn-i4Q">
-                        <barButtonItem key="backBarButtonItem" title="Countries" id="xb9-V6-co6"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="onN-dn-i4Q"/>
                     <connections>
                         <segue destination="K46-Jh-sJ0" kind="show" identifier="showCountry" id="Hd6-lv-G63"/>
                     </connections>
@@ -97,6 +95,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="fet-O5-LR0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemIndigoColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemIndigoColor"/>
                         </textAttributes>
@@ -122,6 +121,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7qw-Ps-8WV">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemIndigoColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemIndigoColor"/>
                         </textAttributes>
