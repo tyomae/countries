@@ -11,6 +11,7 @@ Countries search is the application for the iPhone that displays information abo
 * Xcode 12.2
 * Swift 5
 * Realm 10.1.4
+* R.swift 5.3.0
 ## Technical detail
 The app uses MVVM architecture.  
 
@@ -30,4 +31,4 @@ Information about country is loaded and saved in database using RealmSwift.
 * Country location is shown using MapKit
 * Navigation between screens realized with UITabBarController
 * Supported dark theme
-
+* Supported localization on English, Russian
